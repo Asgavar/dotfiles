@@ -107,7 +107,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # skrinszot
-bindsym $mod+p exec i3-scrot
+bindsym $mod+p exec scrot
 
 # nazwy workspace'ow
 set $tag1 "1: www"

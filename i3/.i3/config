@@ -193,10 +193,10 @@ new_window pixel 3
 # odpalane przy uruchamianiu
 
 # wyswietlanie tapety
-exec --no-startup-id feh --bg-fill /home/asgavar/tapeta.jpg
+exec_always --no-startup-id feh --bg-fill /home/asgavar/tapeta.jpg
 # menadzer polaczen z KDE (xD!)
 exec --no-startup-id kde5-nm-connection-editor
 # status bar
-exec $HOME/.config/polybar/launch.sh
+exec_always $HOME/.config/polybar/launch.sh
 # kompozytor
-exec compton
+exec_always compton

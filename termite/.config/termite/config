@@ -36,10 +36,10 @@ filter_unmatched_urls = true
 #cursor_foreground = #dcdccc
 foreground = #dcdccc
 foreground_bold = #ffffff
-#background = #3f3f3f
+#background = #34495e
 
 # 20% background transparency (requires a compositor)
-background = rgba(51, 0, 0, 0.8)
+background = rgba(52, 73, 94, 0.8)
 #background = rgba(39, 174, 96, 0.8)
 
 # if unset, will reverse foreground and background

@@ -1,8 +1,25 @@
+# A lambda (λ) prompt.
+# Green and red depending on exit status.
+# Underlined if git status is dirty.
+# Uppercase (Λ) if ahead of the remote.
+
 function fish_prompt
-	test $SSH_TTY; and printf (set_color red)(whoami)(set_color white)'@'(set_color yellow)(hostname)' '
+  if is_status_okay
+    set_color green
+  else
+    set_color red
+  end
 
-    test $USER = 'root'; and echo (set_color red)"#"
+  if is_git_dirty
+    set_color --underline
+  end
 
-    # Main
-	echo -n (set_color cyan)(prompt_pwd) (set_color red)'❯'(set_color yellow)'❯'(set_color green)'❯ '
+  if is_git_ahead
+    echo -n  'Λ'
+  else
+    echo -n  'λ'
+  end
+
+  set_color normal
+  echo -n ' '
 end

@@ -44,7 +44,7 @@ floating_modifier $mod
 
 # start a terminal
 # terminal zmieniony na hyper
-bindsym $mod+Return exec /usr/bin/termite
+bindsym $mod+Return exec /usr/bin/st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -193,10 +193,10 @@ new_window pixel 3
 # odpalane przy uruchamianiu
 
 # wyswietlanie tapety
-exec_always --no-startup-id feh --bg-fill /home/asgavar/tapeta.jpg
+exec_always --no-startup-id feh --bg-fill /home/asgavar/tapeta.png
 # menadzer polaczen z KDE (xD!)
 exec --no-startup-id kde5-nm-connection-editor
 # status bar
 exec_always $HOME/.config/polybar/launch.sh
 # kompozytor
-exec_always compton
+#exec_always compton

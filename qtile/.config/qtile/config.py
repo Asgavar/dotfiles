@@ -77,7 +77,7 @@ layouts = [
     #layout.Max(),
     #layout.Stack(num_stacks=2),
     #layout.Tile(),
-    layout.RatioTile(),
+    layout.RatioTile(border_focus="#f5f5f5"),
     #layout.Matrix(),
 ]
 
@@ -98,7 +98,8 @@ screens = [
                 widget.Clock(format='%a %d %b %H:%M %p'),
             ],
             size=30,
-            background=['34495e', '34495e'],
+            #background=['34495e', '34495e'],
+            background=['#212121', '#212121'],
         ),
     ),
 ]

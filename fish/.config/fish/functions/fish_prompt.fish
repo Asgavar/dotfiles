@@ -1,25 +1,33 @@
-# A lambda (λ) prompt.
-# Green and red depending on exit status.
-# Underlined if git status is dirty.
-# Uppercase (Λ) if ahead of the remote.
+function fish_prompt --description 'Write out the prompt'
+	set -l last_status $status
 
-function fish_prompt
-  if is_status_okay
-    set_color green
-  else
-    set_color red
-  end
-
-  if is_git_dirty
-    set_color --underline
-  end
-
-  if is_git_ahead
-    echo -n  'Λ'
-  else
-    echo -n  'λ'
-  end
-
+  # User
+  set_color $fish_color_user
+  echo -n (whoami)
   set_color normal
-  echo -n ' '
+
+  echo -n '@'
+
+  # Host
+  set_color $fish_color_host
+  echo -n (hostname -s)
+  set_color normal
+
+  echo -n ':'
+
+  # PWD
+  set_color $fish_color_cwd
+  echo -n (prompt_pwd)
+  set_color normal
+
+  __terlar_git_prompt
+  __fish_hg_prompt
+  echo
+
+  if not test $last_status -eq 0
+    set_color $fish_color_error
+  end
+
+  echo -n '➤ '
+  set_color normal
 end

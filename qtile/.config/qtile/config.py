@@ -105,7 +105,7 @@ screens = [
 ]
 
 widget_defaults = dict(
-    font='Lemon',
+    font='Courier',
     fontsize=15,
 )
 

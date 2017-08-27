@@ -57,9 +57,6 @@ groups = [
     Group('3: konsola'),
     Group('4: random I'),
     Group('5: random II'),
-    # Group('i'),
-    # Group('o'),
-    # Group('p'),
 ]
 for i in groups:
     # mod + letter of group = switch to group
@@ -105,7 +102,7 @@ screens = [
 ]
 
 widget_defaults = dict(
-    font='Courier',
+    font='RobotoMono',
     fontsize=15,
 )
 

@@ -15,7 +15,7 @@ set $napisy #f5f5f5
 
 # ramka gora i dol titlebara | kolor paska | kolor napisu | kolor ramki z prawej | ramka
 # dookola
-client.focused $kolor $kolor $napisy $kolor $kolor
+client.focused $kolor $kolor $napisy $kolor $napisy
 
 # przerwy niczym w i3-gaps
 gaps inner 20
@@ -209,7 +209,8 @@ bar {
     colors {
         statusline #f5f5f5
         background #212121
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        inactive_workspace #32323200 #32323200 $napisy
+        focused_workspace $kolor $kolor $napisy
     }
 }
 

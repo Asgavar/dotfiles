@@ -4,17 +4,29 @@ _Atom with easy PEP8 indentation...No more space bar mashing!_
 
 ![example of python-indent](https://raw.githubusercontent.com/DSpeckhals/python-indent/master/resources/img/python-indent-demonstration.gif)
 
-__Python Indent__ is the indentation behavior you've been waiting for in Atom! You should no longer have to worry about mashing your tab/space/backspace key every time you press `enter` in the middle of coding. Also, compared to other editors, there is no need to change an app configuration if you want to have a mixture of different types of indents (namely hanging and opening-delimiter-aligned).
+__Python Indent__ is the indentation behavior you've been waiting for in Atom! You should no longer
+have to worry about mashing your tab/space/backspace key every time you press `enter` in the middle
+of coding. Also, compared to other editors, there is no need to change an app configuration if you
+want to have a mixture of different types of indents (namely hanging and opening-delimiter-aligned).
 
-The main obstacle with Atom's native indentation behavior is that it doesn't yet have the necessary API's to do what Python's [PEP8 style guide](https://www.python.org/dev/peps/pep-0008/#indentation) suggests. Enhancement requests and issues have been opened in [Atom Core](https://github.com/atom/atom) on a few occasions, but none have been resolved yet.
+The main obstacle with Atom's native indentation behavior is that it doesn't yet have the necessary
+API's to do what Python's [PEP8 style guide](https://www.python.org/dev/peps/pep-0008/#indentation)
+suggests. Enhancement requests and issues have been opened in [Atom Core](https://github.com/atom/atom)
+on a few occasions, but none have been resolved yet.
 
 - language-python - [Auto indent on line continuation with list/tuple](https://github.com/atom/language-python/issues/22)
 - atom - [Autoindent not working properly](https://github.com/atom/atom/issues/6655)
 
-This package was made to give you expected indentation behavior; __python-indent__ listens for `editor:newline` events in Python source files, and when triggered, adjusts the indentation to be lined up relative to the opening delimiter of the statement _or_ "hanging" (for parameters, tuples, or lists).
+This package was made to give you expected indentation behavior; __python-indent__ listens for
+`editor:newline` events in Python source files, and when triggered, adjusts the indentation to
+be lined up relative to the opening delimiter of the statement _or_ "hanging" (for parameters,
+tuples, or lists).
 
 ### Indent Types
-Both indent types for continuing lines as described in [PEP 0008 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/#indentation) are auto-detected and applied by this package.
+Both indent types for continuing lines as described in
+[PEP 0008 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/#indentation)
+are auto-detected and applied by this package.
+
   - Aligned with Opening Delimiter
 
     ```python
@@ -44,8 +56,8 @@ third_parameter):#<---default Atom language-python
     pass
 
 def with_python_indent_package_added(first_parameter, second_parameter,
-                                      third_parameter):
-    #<--properly unindents to here
+                                     third_parameter):
+    #<--properly dedents to here
     pass
 
 def with_hanging_indent(
@@ -62,4 +74,14 @@ or_like_this = [
 
 ```
 
-There are plenty of other examples (ordinary and extraordinary) in the [test_file](https://github.com/DSpeckhals/python-indent/blob/master/spec/test_file.py).
+There are plenty of other examples (ordinary and extraordinary) in the
+[test_file](https://github.com/DSpeckhals/python-indent/blob/master/spec/test_file.py).
+
+### This isn't working for me!
+
+Sorry to hear that! Hopefully one of the following will help you fix the problem.
+
+* Check that Atom is using "soft tabs" (i.e. spaces). Hard tabs (i.e. `'\t'`) are incompatible with PEP8 compliant continued indenting (newlines inside of a list, inside function definitions, etc.) so this package gives up if the editor is using hard tabs.
+    * Atom has two different settings for this, the "TabType" setting (with choices "auto", "soft", and "hard"), and the "Soft Tabs" setting which is used when TabType is auto, but the auto detection fails.
+* Make sure the Python code is correctly written -- sometimes what looks like incorrect indentation is actually being caused by a bracket twenty lines ago that somehow lost its closing partner!
+* If the above didn't help, please read through the issues and submit a new one if you don't see an issue that covers your problem: [https://github.com/DSpeckhals/python-indent/issues](https://github.com/DSpeckhals/python-indent/issues)

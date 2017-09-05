@@ -2,39 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-116119-5623-4beviy.40gcr3sor/package.tgz",
+        "raw": "/tmp/d-11785-13555-1x6k9y1.0ngn3fpqfr/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-116119-5623-4beviy.40gcr3sor/package.tgz",
-        "spec": "/tmp/d-116119-5623-4beviy.40gcr3sor/package.tgz",
+        "rawSpec": "/tmp/d-11785-13555-1x6k9y1.0ngn3fpqfr/package.tgz",
+        "spec": "/tmp/d-11785-13555-1x6k9y1.0ngn3fpqfr/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-116119-5623-116z4of.y97d0cz0k9"
+      "/tmp/apm-install-dir-11785-13555-1byi7rv.ln3q1cq5mi"
     ]
   ],
-  "_from": "../d-116119-5623-4beviy.40gcr3sor/package.tgz",
-  "_id": "vivid-syntax@2.0.1",
+  "_from": "../d-11785-13555-1x6k9y1.0ngn3fpqfr/package.tgz",
+  "_id": "vivid-syntax@2.1.0",
   "_inCache": true,
+  "_installable": true,
   "_location": "/vivid-syntax",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-116119-5623-4beviy.40gcr3sor/package.tgz",
+    "raw": "/tmp/d-11785-13555-1x6k9y1.0ngn3fpqfr/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-116119-5623-4beviy.40gcr3sor/package.tgz",
-    "spec": "/tmp/d-116119-5623-4beviy.40gcr3sor/package.tgz",
+    "rawSpec": "/tmp/d-11785-13555-1x6k9y1.0ngn3fpqfr/package.tgz",
+    "spec": "/tmp/d-11785-13555-1x6k9y1.0ngn3fpqfr/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-116119-5623-4beviy.40gcr3sor/package.tgz",
-  "_shasum": "07aed7f120cf417b3ddf6e040af8f94997f08572",
+  "_resolved": "file:../d-11785-13555-1x6k9y1.0ngn3fpqfr/package.tgz",
+  "_shasum": "9fa9e84443770b72959875bfa948d21df817c5d4",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-116119-5623-4beviy.40gcr3sor/package.tgz",
-  "_where": "/tmp/apm-install-dir-116119-5623-116z4of.y97d0cz0k9",
+  "_spec": "/tmp/d-11785-13555-1x6k9y1.0ngn3fpqfr/package.tgz",
+  "_where": "/tmp/apm-install-dir-11785-13555-1byi7rv.ln3q1cq5mi",
   "bugs": {
     "url": "https://github.com/nschneid/vivid-syntax/issues"
   },
@@ -59,15 +60,5 @@
     "url": "git+https://github.com/nschneid/vivid-syntax.git"
   },
   "theme": "syntax",
-  "version": "2.0.1",
-  "_atomModuleCache": {
-    "version": 1,
-    "dependencies": [],
-    "extensions": {
-      ".json": [
-        "package.json"
-      ]
-    },
-    "folders": []
-  }
+  "version": "2.1.0"
 }

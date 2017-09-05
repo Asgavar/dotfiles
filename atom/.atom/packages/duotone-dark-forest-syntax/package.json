@@ -2,49 +2,50 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-116119-5042-upmsi8.1nblwvobt9/package.tgz",
+        "raw": "/tmp/d-11785-13378-1wmj7ei.lx5n4s4i/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-116119-5042-upmsi8.1nblwvobt9/package.tgz",
-        "spec": "/tmp/d-116119-5042-upmsi8.1nblwvobt9/package.tgz",
+        "rawSpec": "/tmp/d-11785-13378-1wmj7ei.lx5n4s4i/package.tgz",
+        "spec": "/tmp/d-11785-13378-1wmj7ei.lx5n4s4i/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-116119-5042-1i91dyq.un5q4a38fr"
+      "/tmp/apm-install-dir-11785-13378-ft0knt.kgyd86w29"
     ]
   ],
-  "_from": "../d-116119-5042-upmsi8.1nblwvobt9/package.tgz",
-  "_id": "duotone-dark-forest-syntax@2.0.1",
+  "_from": "../d-11785-13378-1wmj7ei.lx5n4s4i/package.tgz",
+  "_id": "duotone-dark-forest-syntax@2.1.0",
   "_inCache": true,
+  "_installable": true,
   "_location": "/duotone-dark-forest-syntax",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-116119-5042-upmsi8.1nblwvobt9/package.tgz",
+    "raw": "/tmp/d-11785-13378-1wmj7ei.lx5n4s4i/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-116119-5042-upmsi8.1nblwvobt9/package.tgz",
-    "spec": "/tmp/d-116119-5042-upmsi8.1nblwvobt9/package.tgz",
+    "rawSpec": "/tmp/d-11785-13378-1wmj7ei.lx5n4s4i/package.tgz",
+    "spec": "/tmp/d-11785-13378-1wmj7ei.lx5n4s4i/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-116119-5042-upmsi8.1nblwvobt9/package.tgz",
-  "_shasum": "5d1bf68cd6f12a26e7df36614ff41cc04cfe2d6a",
+  "_resolved": "file:../d-11785-13378-1wmj7ei.lx5n4s4i/package.tgz",
+  "_shasum": "edd97ed9149868356df5c21dcc3a5c3d76e238cc",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-116119-5042-upmsi8.1nblwvobt9/package.tgz",
-  "_where": "/tmp/apm-install-dir-116119-5042-1i91dyq.un5q4a38fr",
+  "_spec": "/tmp/d-11785-13378-1wmj7ei.lx5n4s4i/package.tgz",
+  "_where": "/tmp/apm-install-dir-11785-13378-ft0knt.kgyd86w29",
   "bugs": {
     "url": "https://github.com/simurai/duotone-dark-forest-syntax/issues"
   },
   "dependencies": {
-    "duotone-syntax": "^2.0.0"
+    "duotone-syntax": "^2.1.0"
   },
   "description": "A dark green-yellow DuoTone syntax theme",
   "devDependencies": {},
   "engines": {
-    "atom": ">1.0.0"
+    "atom": ">=1.13.0 <2.0.0"
   },
   "homepage": "https://github.com/simurai/duotone-dark-forest-syntax#readme",
   "keywords": [
@@ -64,29 +65,5 @@
     "url": "git+https://github.com/simurai/duotone-dark-forest-syntax.git"
   },
   "theme": "syntax",
-  "version": "2.0.1",
-  "_atomModuleCache": {
-    "version": 1,
-    "dependencies": [],
-    "extensions": {
-      ".js": [
-        "node_modules/duotone-syntax/docs/palette.js"
-      ],
-      ".json": [
-        "node_modules/duotone-syntax/package.json",
-        "package.json"
-      ]
-    },
-    "folders": [
-      {
-        "paths": [
-          "docs",
-          ""
-        ],
-        "dependencies": {
-          "duotone-syntax": "^2.0.0"
-        }
-      }
-    ]
-  }
+  "version": "2.1.0"
 }

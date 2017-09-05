@@ -5,7 +5,11 @@ RailroadDiagramElement = require "./railroad-diagram-element.coffee"
 
 MATCH_PAIRS = '(': ')', '[': ']', '{': '}', '<': '>'
 
-issue58 = true
+# I do not know, when this has been fixed, but with current 1.18.x it is gone
+issue58 = require('semver').lt(atom.appVersion, "1.18.0")
+
+log_debug = console.log.bind console, "rx2rr"
+log_debug = ->
 
 module.exports =
   regexRailroadDiagramView: null
@@ -23,6 +27,30 @@ module.exports =
 
     @subscriptions.add atom.workspace.observeTextEditors (editor) =>
       @subscriptions.add editor.onDidChangeCursorPosition debounce (=> @checkForRegExp()), 100
+
+    @subscriptions.add atom.commands.add 'atom-text-editor',
+      'regex-railroad-diagram:show': =>
+        if not @element.isVisible()
+          console.log "is not visible"
+          flavour = 'perl'
+          options = ''
+          editor = atom.workspace.getActiveTextEditor()
+          @element.showDiagram editor.getSelectedText(), {flavour, options}
+          #editor.scrollToCursorPosition()
+
+          @element.focusTextEditor()
+        else
+          console.log "is visible"
+
+      #  else TODO
+#        Problem: on confirm the regex markers are also overridden
+#          editor = atom.workspace.getActiveTextEditor()
+#          # select current regex first
+#          [range, flavour] = @getRegexpBufferRange editor
+#          editor.setSelectedBufferRange range
+#          @element.focusTextEditor()
+
+
 
     if atom.config.get('regex-railroad-diagram.enabled')
       @addDisableCommand()
@@ -54,7 +82,7 @@ module.exports =
   bufferRangeForScope: (editor, scope, position=null) ->
     unless issue58
       if position?
-        result = editor.displayBuffer.bufferRangeForScopeAtPosition(scope, position)
+        result = editor.bufferRangeForScopeAtPosition(scope, position)
       else
         result = editor.bufferRangeForScopeAtCursor(scope)
       return result
@@ -80,7 +108,7 @@ module.exports =
     if startTabs
       position.column = position.column - startTabs + startTabs*tabLength
 
-    result = editor.displayBuffer.bufferRangeForScopeAtPosition(scope, position)
+    result = editor.bufferRangeForScopeAtPosition(scope, position)
     return result unless result
 
     # this is usually only one row, but if at some point the range would span
@@ -118,6 +146,8 @@ module.exports =
   cleanRegex: (regex, flavour) ->
     opts = ""
 
+    log_debug "cleanRegex", regex, flavour
+
     #console.log "regex", regex, "flavour", flavour
 
     if m = (flavour.match(/php/) and regex.match(/^(["'])\/(.*)\/(\w*)\1$/))
@@ -133,7 +163,7 @@ module.exports =
         text = text + close + m[4]
         close = expectedClose
       regexForEscaped = new RegExp("\\\\(#{open}|#{close})", 'g')
-      regex = text.replace(/\//, '\\/').replace(regexForEscaped, '$1')
+      regex = text.replace(new RegExp("\\/", '\\/').replace(regexForEscaped, '$1'))
     else if m = (flavour.match(/perl/) and (
         regex.match(/^(?:m|qr)(.)(.*)(\1|\W)(\w*)$/) or
         regex.match(/^s(.)(.*)(\1|\W)(?:\1.*\W|.*\1)(\w*)$/)
@@ -150,6 +180,7 @@ module.exports =
 
     #console.log "regex", regex, "flavour", flavour, "opts", opts
 
+    log_debug "cleanRegex done:", regex, opts
     return [regex, opts]
 
   checkForRegExp: ->
@@ -160,6 +191,7 @@ module.exports =
     return unless editor?
 
     [range, flavour] = @getRegexpBufferRange editor
+    log_debug "range", range, "flavour", flavour
 
     if not range
       @element.assertHidden()
@@ -173,6 +205,7 @@ module.exports =
 
       [regex, options] = @cleanRegex regex, flavour
       @element.showDiagram regex, {flavour, options}
+      #editor.scrollToCursorPosition()
 
   #   if not range
   #     @emitter.emit 'did-not-find-regexp'

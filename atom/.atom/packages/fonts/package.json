@@ -2,40 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-11783-5716-9auj2s.uep5r35wmi/package.tgz",
+        "raw": "/tmp/d-11785-13416-16axq3b.2dyousor/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-11783-5716-9auj2s.uep5r35wmi/package.tgz",
-        "spec": "/tmp/d-11783-5716-9auj2s.uep5r35wmi/package.tgz",
+        "rawSpec": "/tmp/d-11785-13416-16axq3b.2dyousor/package.tgz",
+        "spec": "/tmp/d-11785-13416-16axq3b.2dyousor/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-11783-5716-138sim9.8hhlqpk3xr"
+      "/tmp/apm-install-dir-11785-13416-7i0ekq.6r12fyldi"
     ]
   ],
-  "_from": "../d-11783-5716-9auj2s.uep5r35wmi/package.tgz",
-  "_id": "fonts@3.0.2",
+  "_from": "../d-11785-13416-16axq3b.2dyousor/package.tgz",
+  "_id": "fonts@3.0.3",
   "_inCache": true,
   "_installable": true,
   "_location": "/fonts",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11783-5716-9auj2s.uep5r35wmi/package.tgz",
+    "raw": "/tmp/d-11785-13416-16axq3b.2dyousor/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-11783-5716-9auj2s.uep5r35wmi/package.tgz",
-    "spec": "/tmp/d-11783-5716-9auj2s.uep5r35wmi/package.tgz",
+    "rawSpec": "/tmp/d-11785-13416-16axq3b.2dyousor/package.tgz",
+    "spec": "/tmp/d-11785-13416-16axq3b.2dyousor/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11783-5716-9auj2s.uep5r35wmi/package.tgz",
-  "_shasum": "01154ab085f21928462c569b1b156f5a0ee58947",
+  "_resolved": "file:../d-11785-13416-16axq3b.2dyousor/package.tgz",
+  "_shasum": "68d3f4d25929437d3dd7e8ea89f6ecd15e6035e3",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-11783-5716-9auj2s.uep5r35wmi/package.tgz",
-  "_where": "/tmp/apm-install-dir-11783-5716-138sim9.8hhlqpk3xr",
+  "_spec": "/tmp/d-11785-13416-16axq3b.2dyousor/package.tgz",
+  "_where": "/tmp/apm-install-dir-11785-13416-7i0ekq.6r12fyldi",
   "bugs": {
     "url": "https://github.com/braver/fonts/issues"
   },
@@ -167,5 +167,5 @@
     "type": "git",
     "url": "git+https://github.com/braver/fonts.git"
   },
-  "version": "3.0.2"
+  "version": "3.0.3"
 }

@@ -2,39 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-116119-6632-184ji1d.23ls43rf6r/package.tgz",
+        "raw": "/tmp/d-11785-13340-u4wit.pypzwr8uxr/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-116119-6632-184ji1d.23ls43rf6r/package.tgz",
-        "spec": "/tmp/d-116119-6632-184ji1d.23ls43rf6r/package.tgz",
+        "rawSpec": "/tmp/d-11785-13340-u4wit.pypzwr8uxr/package.tgz",
+        "spec": "/tmp/d-11785-13340-u4wit.pypzwr8uxr/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-116119-6632-15prdst.6ncint57b9"
+      "/tmp/apm-install-dir-11785-13340-b7lrbf.q4b2h2gldi"
     ]
   ],
-  "_from": "../d-116119-6632-184ji1d.23ls43rf6r/package.tgz",
-  "_id": "atom-material-syntax-light@0.4.5",
+  "_from": "../d-11785-13340-u4wit.pypzwr8uxr/package.tgz",
+  "_id": "atom-material-syntax-light@0.4.6",
   "_inCache": true,
+  "_installable": true,
   "_location": "/atom-material-syntax-light",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-116119-6632-184ji1d.23ls43rf6r/package.tgz",
+    "raw": "/tmp/d-11785-13340-u4wit.pypzwr8uxr/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-116119-6632-184ji1d.23ls43rf6r/package.tgz",
-    "spec": "/tmp/d-116119-6632-184ji1d.23ls43rf6r/package.tgz",
+    "rawSpec": "/tmp/d-11785-13340-u4wit.pypzwr8uxr/package.tgz",
+    "spec": "/tmp/d-11785-13340-u4wit.pypzwr8uxr/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-116119-6632-184ji1d.23ls43rf6r/package.tgz",
-  "_shasum": "ba0d281ad84e0e347f52073f8e95291112f113c9",
+  "_resolved": "file:../d-11785-13340-u4wit.pypzwr8uxr/package.tgz",
+  "_shasum": "6d5748987d45b664e033e1967083fb53eb725d93",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-116119-6632-184ji1d.23ls43rf6r/package.tgz",
-  "_where": "/tmp/apm-install-dir-116119-6632-15prdst.6ncint57b9",
+  "_spec": "/tmp/d-11785-13340-u4wit.pypzwr8uxr/package.tgz",
+  "_where": "/tmp/apm-install-dir-11785-13340-b7lrbf.q4b2h2gldi",
   "bugs": {
     "url": "https://github.com/silvestreh/atom-material-syntax-light/issues"
   },
@@ -42,7 +43,7 @@
   "description": "A light syntax theme for Atom that uses Google's Material Design color palette",
   "devDependencies": {},
   "engines": {
-    "atom": ">=1.0.0 <2.0.0"
+    "atom": ">=1.13.0 <2.0.0"
   },
   "homepage": "https://github.com/silvestreh/atom-material-syntax-light#readme",
   "keywords": [
@@ -61,15 +62,5 @@
     "url": "git+https://github.com/silvestreh/atom-material-syntax-light.git"
   },
   "theme": "syntax",
-  "version": "0.4.5",
-  "_atomModuleCache": {
-    "version": 1,
-    "dependencies": [],
-    "extensions": {
-      ".json": [
-        "package.json"
-      ]
-    },
-    "folders": []
-  }
+  "version": "0.4.6"
 }

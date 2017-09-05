@@ -2,39 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-116119-5703-mi8kro.6z1653766r/package.tgz",
+        "raw": "/tmp/d-11785-13429-1191muj.orrrizfr/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-116119-5703-mi8kro.6z1653766r/package.tgz",
-        "spec": "/tmp/d-116119-5703-mi8kro.6z1653766r/package.tgz",
+        "rawSpec": "/tmp/d-11785-13429-1191muj.orrrizfr/package.tgz",
+        "spec": "/tmp/d-11785-13429-1191muj.orrrizfr/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-116119-5703-1vimllv.b9erssjor"
+      "/tmp/apm-install-dir-11785-13429-10v9og8.lnojolayvi"
     ]
   ],
-  "_from": "../d-116119-5703-mi8kro.6z1653766r/package.tgz",
-  "_id": "gaia-dark-syntax@1.1.1",
+  "_from": "../d-11785-13429-1191muj.orrrizfr/package.tgz",
+  "_id": "gaia-dark-syntax@2.1.0",
   "_inCache": true,
+  "_installable": true,
   "_location": "/gaia-dark-syntax",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-116119-5703-mi8kro.6z1653766r/package.tgz",
+    "raw": "/tmp/d-11785-13429-1191muj.orrrizfr/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-116119-5703-mi8kro.6z1653766r/package.tgz",
-    "spec": "/tmp/d-116119-5703-mi8kro.6z1653766r/package.tgz",
+    "rawSpec": "/tmp/d-11785-13429-1191muj.orrrizfr/package.tgz",
+    "spec": "/tmp/d-11785-13429-1191muj.orrrizfr/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-116119-5703-mi8kro.6z1653766r/package.tgz",
-  "_shasum": "9068d7fa457d1eb718201ebc08741e608b2360ff",
+  "_resolved": "file:../d-11785-13429-1191muj.orrrizfr/package.tgz",
+  "_shasum": "f55528956b920f0337d843f293824d15b783a9c0",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-116119-5703-mi8kro.6z1653766r/package.tgz",
-  "_where": "/tmp/apm-install-dir-116119-5703-1vimllv.b9erssjor",
+  "_spec": "/tmp/d-11785-13429-1191muj.orrrizfr/package.tgz",
+  "_where": "/tmp/apm-install-dir-11785-13429-10v9og8.lnojolayvi",
   "bugs": {
     "url": "https://github.com/protesilaos/gaia-dark-syntax/issues"
   },
@@ -55,22 +56,12 @@
   "license": "MIT",
   "name": "gaia-dark-syntax",
   "optionalDependencies": {},
-  "readme": "# Gaia syntax theme (dark version)\n\nLow-to-medium contrast theme. The most prevalent colours are variants of brown, green, orange, cyan, and yellow.\n\n*Gaia* comes in standalone light and dark versions (see further info below).\n\n## Screenshot\n\n![gaia dark screenshot](https://raw.githubusercontent.com/protesilaos/prot16/master/gaia/img/gaia_dark_sample.png)\n\n*The font is [Hack](https://github.com/chrissimpkins/Hack)*.  \n*JavaScript demo is source code of [prismjs](http://prismjs.com/)*  \n*The UI is my experimental fork of the default One Dark*.\n\n## Download\n\nSearch for `gaia-dark-syntax` in Settings > Install > Themes. Or install it directly using the command:\n\n```shell\napm install gaia-dark-syntax\n```\n\n## Further information\n\nProject page: [https://protesilaos.com/gaia](https://protesilaos.com/gaia)\n\nGaia light version: [https://atom.io/themes/gaia-syntax](https://atom.io/themes/gaia-syntax)\n",
+  "readme": "# Gaia syntax theme (dark version)\n\nLow-to-medium contrast theme. The most prevalent colours are variants of brown, green, orange, cyan, and yellow.\n\n*Gaia* comes in standalone light and dark versions (see further info below).\n\n## Screenshots\n\n![gaia dark screenshot html](https://raw.githubusercontent.com/protesilaos/prot16/master/gaia/img/gaia_dark_html.png)\n\n![gaia dark screenshot scss](https://raw.githubusercontent.com/protesilaos/prot16/master/gaia/img/gaia_dark_scss.png)\n\n![gaia dark screenshot js](https://raw.githubusercontent.com/protesilaos/prot16/master/gaia/img/gaia_dark_js.png)\n\n![gaia dark screenshot md](https://raw.githubusercontent.com/protesilaos/prot16/master/gaia/img/gaia_dark_md.png)\n\n*The font is [Iosevka term](https://github.com/be5invis/Iosevka)*.  \n*The UI is [Atom Material](https://github.com/atom-material/atom-material-ui)*.\n\n## Download\n\nSearch for `gaia-dark-syntax` in Settings > Install > Themes. Or install it directly using the command:\n\n```shell\napm install gaia-dark-syntax\n```\n\n## Further information\n\nProject page: [https://protesilaos.com/gaia](https://protesilaos.com/gaia)\n\nGaia light version: [https://atom.io/themes/gaia-syntax](https://atom.io/themes/gaia-syntax)\n",
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/protesilaos/gaia-dark-syntax.git"
   },
   "theme": "syntax",
-  "version": "1.1.1",
-  "_atomModuleCache": {
-    "version": 1,
-    "dependencies": [],
-    "extensions": {
-      ".json": [
-        "package.json"
-      ]
-    },
-    "folders": []
-  }
+  "version": "2.1.0"
 }

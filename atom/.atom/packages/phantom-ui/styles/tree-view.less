@@ -1,0 +1,37 @@
+@import "ui-variables";
+
+.tree-view {
+  font-size: @font-size;
+  background: @tree-view-background-color;
+  transition: background 200ms;
+
+  .selected:before {
+    background: @darker;
+    transition: background 200ms;
+  }
+}
+
+.tree-view-resizer {
+  .tree-view-resize-handle {
+    width: 8px;
+  }
+}
+
+.focusable-panel {
+  opacity: 1;
+
+  &:focus {
+    background: @darker;
+
+    .selected:before {
+      background: @background-color-selected;
+    }
+  }
+}
+
+[data-show-on-right-side=true] {
+  .tree-view .selected:before,
+  .focusable-panel {
+    box-shadow: inset 3px 0 0 rgba(0,0,0, .05);
+  }
+}

@@ -1,0 +1,94 @@
+// Colors
+
+@main: #20242D;
+@darker: darken(@main, 5%);
+
+@text-color: #B1BDBF;
+@text-color-subtle: #616D6F;
+@text-color-highlight: #EDF1F2;
+@text-color-selected: @text-color-highlight;
+
+@text-color-info: #5ECCF6;
+@text-color-success: #9BEE73;
+@text-color-warning: #F7D460;
+@text-color-error: #EF6F6F;
+
+@text-color-ignored: @text-color-subtle;
+@text-color-added: @text-color-success;
+@text-color-renamed: @text-color-info;
+@text-color-modified: @text-color-warning;
+@text-color-removed: @text-color-error;
+
+@background-color-info: #53B4DA;
+@background-color-success: #91CB76;
+@background-color-warning: #E18A61;
+@background-color-error: #D96A6A;
+@background-color-highlight: rgba(255, 255, 255, 0.07);
+@background-color-selected: lighten(@main, 10%);
+
+@app-background-color: @main;
+
+@base-background-color: @main;
+@base-border-color: @darker;
+
+@pane-item-background-color: @main;
+@pane-item-border-color: @darker;
+
+@input-background-color: darken(@main, 2%);
+@input-border-color: @base-border-color;
+
+@tool-panel-background-color: @main;
+@tool-panel-border-color: @base-border-color;
+
+@inset-panel-background-color: @darker;
+@inset-panel-border-color: @base-border-color;
+
+@panel-heading-background-color: @main;
+@panel-heading-border-color: fadein(@base-border-color, 10%);
+
+@overlay-background-color: darken(@main, 2%);
+@overlay-border-color: @darker;
+
+@button-background-color: #43484d;
+@button-background-color-hover: lighten(@button-background-color, 5%);
+@button-background-color-selected: #5c6064;
+@button-border-color: @base-border-color;
+
+@tab-bar-background-color: @main;
+@tab-background-color: @main;
+@tab-background-color-active: @darker;
+
+@tree-view-background-color: @main;
+@tree-view-border-color: @tool-panel-border-color;
+
+@scrollbar-background-color: @main; // Needs to be opaque -> atom/atom/issues/4578
+@scrollbar-color: @text-color-info;
+
+@ui-site-color-1: @background-color-success; // green
+@ui-site-color-2: @background-color-info; // blue
+@ui-site-color-3: @background-color-warning; // orange
+@ui-site-color-4: #db2ff4; // purple
+@ui-site-color-5: #f5e11d; // yellow
+
+
+// Sizes
+
+@font-size: 11px;
+@input-font-size: 14px;
+
+@disclosure-arrow-size: 12px;
+
+@component-padding: 12px;
+@component-icon-padding: 5px;
+@component-icon-size: 16px;
+@component-line-height: 25px;
+@component-border-radius: 0;
+
+@lists-line-height: 30px;
+
+@tab-height: 36px;
+
+
+// Other
+
+@font-family: 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;

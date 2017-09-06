@@ -112,4 +112,4 @@ auto_fullscreen = True
 def main(qtile):
     ''' This function is called when Qtile starts. '''
     #Popen(["termite"])
-    Popen(["feh", "--bg-fill", "/home/asgavar/tapeta.png"])
+    Popen(["feh", "--bg-fill", "/home/asgavar/tapeta.jpg"])

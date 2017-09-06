@@ -7,7 +7,7 @@
 #while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
-/usr/local/bin/polybar papiesz
+/usr/bin/polybar papiesz
 #polybar bar2 &
 
 echo "Bars launched..."

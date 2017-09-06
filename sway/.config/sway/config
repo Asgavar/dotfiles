@@ -213,5 +213,4 @@ bar {
         focused_workspace $kolor $kolor $napisy
     }
 }
-
 include /etc/sway/config.d/*

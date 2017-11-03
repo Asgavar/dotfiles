@@ -1,0 +1,74 @@
+{
+  "_from": "file:/tmp/d-117921-26614-1vi2wjq.74ebl/package.tgz",
+  "_id": "duotone-dark-space-syntax@2.1.0",
+  "_inBundle": false,
+  "_integrity": "sha1-mihwfdOvRrIqKqKqSAgbeX5FT9o=",
+  "_location": "/duotone-dark-space-syntax",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-117921-26614-fv85qu.j5qzf",
+    "raw": "/tmp/d-117921-26614-1vi2wjq.74ebl/package.tgz",
+    "rawSpec": "/tmp/d-117921-26614-1vi2wjq.74ebl/package.tgz",
+    "saveSpec": "file:/tmp/d-117921-26614-1vi2wjq.74ebl/package.tgz",
+    "fetchSpec": "/tmp/d-117921-26614-1vi2wjq.74ebl/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-117921-26614-1vi2wjq.74ebl/package.tgz",
+  "_spec": "/tmp/d-117921-26614-1vi2wjq.74ebl/package.tgz",
+  "_where": "/tmp/apm-install-dir-117921-26614-fv85qu.j5qzf",
+  "bugs": {
+    "url": "https://github.com/simurai/duotone-dark-space-syntax/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "duotone-syntax": "^2.1.0"
+  },
+  "deprecated": false,
+  "description": "A dark blue-red DuoTone syntax theme",
+  "engines": {
+    "atom": ">=1.13.0 <2.0.0"
+  },
+  "homepage": "https://github.com/simurai/duotone-dark-space-syntax#readme",
+  "keywords": [
+    "dark",
+    "blue",
+    "red",
+    "duotone",
+    "syntax"
+  ],
+  "license": "MIT",
+  "name": "duotone-dark-space-syntax",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simurai/duotone-dark-space-syntax.git"
+  },
+  "theme": "syntax",
+  "version": "2.1.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".js": [
+        "node_modules/duotone-syntax/docs/palette.js"
+      ],
+      ".json": [
+        "node_modules/duotone-syntax/package.json",
+        "package.json"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "docs",
+          ""
+        ],
+        "dependencies": {
+          "duotone-syntax": "^2.1.0"
+        }
+      }
+    ]
+  }
+}

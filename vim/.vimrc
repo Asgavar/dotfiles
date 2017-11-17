@@ -67,4 +67,4 @@ set backspace=indent,eol,start	" Backspace behaviour
 
 set t_Co=256   " This is may or may not needed.
 set background=dark
-colorscheme shine
+colorscheme PaperColor

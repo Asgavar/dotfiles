@@ -1,21 +1,15 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
+include "$HOME/.cache/wal/colors-sway"
 
-### Variables
-#
-# Logo key. Use Mod1 for Alt.
 set $mod Mod4
-
-#==== kolory ====
 set $kolor #212121
 set $napisy #f5f5f5
 
+font pango:InputMono 10
+
 # ramka gora i dol titlebara | kolor paska | kolor napisu | kolor ramki z prawej | ramka
 # dookola
-client.focused $kolor $kolor $napisy $kolor $napisy
+#client.focused $kolor $kolor $napisy $kolor $napisy
+client.focused $color0 $background $foreground $color7
 
 # przerwy niczym w i3-gaps
 gaps inner 20
@@ -34,22 +28,13 @@ set $right l
 # Your preferred terminal emulator
 set $term termite
 # Your preferred application launcher
-set $menu dmenu_run
+#set $menu dmenu_run
+set $menu /home/asgavar/dmenu.sh
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/sway/)
 # feh przestal byc potrzebny
-output * bg /home/asgavar/tapeta.jpg fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+#output * bg /home/asgavar/tapeta.jpg fill
+output * bg $wallpaper fill
 
-### Input configuration
-#
 # Example configuration:
 #
 #   input "2:14:SynPS/2_Synaptics_TouchPad" {
@@ -63,9 +48,6 @@ output * bg /home/asgavar/tapeta.jpg fill
 # Read `man 5 sway-input` for more information about this section.
 
 ### Key bindings
-#
-# Basics:
-#
     # start a terminal
     bindsym $mod+Return exec $term
 
@@ -83,10 +65,11 @@ output * bg /home/asgavar/tapeta.jpg fill
     floating_modifier $mod normal
 
     # reload the configuration file
-    bindsym $mod+Shift+c reload
+    bindsym $mod+Shift+r reload
 
     # exit sway (logs you out of your wayland session)
     bindsym $mod+Shift+e exit
+
 #
 # Moving around:
 #
@@ -111,6 +94,7 @@ output * bg /home/asgavar/tapeta.jpg fill
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+
 #
 # Workspaces:
 #
@@ -136,15 +120,14 @@ output * bg /home/asgavar/tapeta.jpg fill
     bindsym $mod+Shift+8 move container to workspace 8
     bindsym $mod+Shift+9 move container to workspace 9
     bindsym $mod+Shift+0 move container to workspace 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
+
 #
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
+    bindsym $mod+h splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
@@ -160,9 +143,6 @@ output * bg /home/asgavar/tapeta.jpg fill
 
     # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle
-
-    # move focus to the parent container
-    bindsym $mod+a focus parent
 #
 # Scratchpad:
 #
@@ -190,8 +170,8 @@ mode "resize" {
 
     # ditto, with arrow keys
     bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Down resize shrink height 10 px or 10 ppt
+    bindsym Up resize grow height 10 px or 10 ppt
     bindsym Right resize grow width 10 px or 10 ppt
 
     # return to default mode
@@ -205,12 +185,13 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    status_command i3status
+    status_command i3blocks
     position top
     colors {
         statusline #f5f5f5
-        background #212121
-        inactive_workspace #32323200 #32323200 $napisy
+        #background #281A23
+        background $background
+        #inactive_workspace #32323200 #32323200 $napisy
         focused_workspace $kolor $kolor $napisy
     }
 }

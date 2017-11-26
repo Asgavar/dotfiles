@@ -16,6 +16,7 @@ Plugin 'cburroughs/pep8.py'
 Plugin 'morhetz/gruvbox'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'dylanaraps/wal.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -67,4 +68,5 @@ set backspace=indent,eol,start	" Backspace behaviour
 
 set t_Co=256   " This is may or may not needed.
 set background=dark
-colorscheme PaperColor
+" colorscheme PaperColor
+colorscheme wal

@@ -1,0 +1,15 @@
+"*":
+  core:
+    telemetryConsent: "no"
+    themes: [
+      "apex-ui"
+      "naturezen-light-syntax"
+    ]
+  editor:
+    fontFamily: "Input Mono"
+    tabLength: 4
+    tabType: "soft"
+  "exception-reporting":
+    userId: "29ea2360-3404-454f-a37e-a0f1403320f8"
+  welcome:
+    showOnStartup: false

@@ -7,4 +7,6 @@ if grep pustka /etc/hostname
     alias usbtether "/home/asgavar/dotfiles/things_void/usb_tether.sh"
 end
 alias dropbox "python2 /home/asgavar/dropbox.py"
+alias gs "git status"
+alias off "sudo poweroff"
 clear

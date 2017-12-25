@@ -9,4 +9,5 @@ end
 alias dropbox "python2 /home/asgavar/dropbox.py"
 alias gs "git status"
 alias off "sudo poweroff"
+alias swm "sudo wifi-menu"
 clear

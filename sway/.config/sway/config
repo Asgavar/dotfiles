@@ -8,8 +8,7 @@ font pango:InputMono 10
 
 # ramka gora i dol titlebara | kolor paska | kolor napisu | kolor ramki z prawej | ramka
 # dookola
-#client.focused $kolor $kolor $napisy $kolor $napisy
-client.focused $color0 $background $foreground $color7
+client.focused $color0 $background $foreground $color7 $foreground
 
 # przerwy niczym w i3-gaps
 gaps inner 20
@@ -195,4 +194,3 @@ bar {
         focused_workspace $kolor $kolor $napisy
     }
 }
-include /etc/sway/config.d/*

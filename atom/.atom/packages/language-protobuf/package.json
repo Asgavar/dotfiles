@@ -1,0 +1,50 @@
+{
+  "_from": "file:/tmp/d-1171119-5608-q6w2c6.nfsu7/package.tgz",
+  "_id": "language-protobuf@0.7.1",
+  "_inBundle": false,
+  "_integrity": "sha512-XUjsfPrIPxfYi02cSmwQsi5guXRO8xfn4RjayPFHoZY4K93C/VXRquIxV3DhZCQEZerNlvEwxANowNFXcuLIdw==",
+  "_location": "/language-protobuf",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-1171119-5608-1mvkzf3.lgefg",
+    "raw": "/tmp/d-1171119-5608-q6w2c6.nfsu7/package.tgz",
+    "rawSpec": "/tmp/d-1171119-5608-q6w2c6.nfsu7/package.tgz",
+    "saveSpec": "file:/tmp/d-1171119-5608-q6w2c6.nfsu7/package.tgz",
+    "fetchSpec": "/tmp/d-1171119-5608-q6w2c6.nfsu7/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-1171119-5608-q6w2c6.nfsu7/package.tgz",
+  "_spec": "/tmp/d-1171119-5608-q6w2c6.nfsu7/package.tgz",
+  "_where": "/tmp/apm-install-dir-1171119-5608-1mvkzf3.lgefg",
+  "bugs": {
+    "url": "https://github.com/podgib/atom-protobuf/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Adds protocol buffer support to atom",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/podgib/atom-protobuf#readme",
+  "license": "MIT",
+  "name": "language-protobuf",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/podgib/atom-protobuf.git"
+  },
+  "version": "0.7.1",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

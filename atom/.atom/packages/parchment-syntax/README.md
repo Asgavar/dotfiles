@@ -1,7 +1,20 @@
 # parchment-syntax theme
 
-Little warning:
-- Early stage of development
-- Adapted mostly for python (MagicPython)
+Theme is still WIP.
 
-![Screenshot here](https://cloud.githubusercontent.com/assets/3260024/26567763/64657a82-4506-11e7-9f0f-13ebaa2488ee.png)
+Adapted for:
+- Python (MagicPython)
+- Lua
+- Javascript
+- Markdown
+- HTML
+- CSS/Less
+- Json
+- Yaml
+
+![Screenshot here](https://user-images.githubusercontent.com/3260024/34928484-ef81ff0a-f9ce-11e7-9e54-8b8542ade870.png)
+
+## TODO
+
+- Thin red must be darker than bold
+- .less :not operator

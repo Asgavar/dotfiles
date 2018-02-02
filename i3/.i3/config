@@ -2,6 +2,9 @@ set $mod Mod4
 set $kolor #212121
 set $napisy #f5f5f5
 
+exec_always python -m pywal -i /home/asgavar/tapeta.jpg
+exec_always /usr/bin/compton
+
 set_from_resource $foreground i3wm.color7
 set_from_resource $background i32m.color2
 

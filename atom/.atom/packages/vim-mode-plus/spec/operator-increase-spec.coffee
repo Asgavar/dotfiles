@@ -2,13 +2,13 @@
 settings = require '../lib/settings'
 
 describe "Operator Increase", ->
-  [set, ensure, keystroke, editor, editorElement, vimState] = []
+  [set, ensure, editor, editorElement, vimState] = []
 
   beforeEach ->
     getVimState (state, vim) ->
       vimState = state
       {editor, editorElement} = vimState
-      {set, ensure, keystroke} = vim
+      {set, ensure} = vim
 
   describe "the ctrl-a/ctrl-x keybindings", ->
     beforeEach ->
@@ -112,14 +112,13 @@ describe "Operator Increase", ->
       describe "visual-mode", ->
         beforeEach ->
           set
-            text: """
-              1 2 3
+            textC: """
+              1 |2 3
               1 2 3
               1 2 3
               1 2 3
               """
         it "increase number in characterwise selected range", ->
-          set cursor: [0, 2]
           ensure 'v 2 j ctrl-a',
             textC: """
               1 |3 4
@@ -355,7 +354,7 @@ describe "Operator Increase", ->
           set text: "1 0 0 0 0", cursor: [0, 0]
           ensure "v $", selectedText: '1 0 0 0 0'
         it "put cursor on start position when finished and repeatable (case: selection is not reversed)", ->
-          ensure selectionIsReversed: false
+          ensure null, selectionIsReversed: false
           ensure 'g ctrl-a', text: "1 2 3 4 5", cursor: [0, 0], mode: 'normal'
           ensure '.', text: "6 7 8 9 10" , cursor: [0, 0]
         it "put cursor on start position when finished and repeatable (case: selection is reversed)", ->

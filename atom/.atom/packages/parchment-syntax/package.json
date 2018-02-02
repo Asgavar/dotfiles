@@ -1,30 +1,46 @@
 {
-  "_from": "file:/tmp/d-117913-2395-t8en6m.sknzn/package.tgz",
-  "_id": "parchment-syntax@0.3.2",
-  "_inBundle": false,
-  "_integrity": "sha1-gcbqlDnE8Fo8jACUJU0UHKfAPcg=",
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-11812-24153-c5nngr.19u1eb3xr/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-11812-24153-c5nngr.19u1eb3xr/package.tgz",
+        "spec": "/tmp/d-11812-24153-c5nngr.19u1eb3xr/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-11812-24153-15nf3qo.g2kgwrk9"
+    ]
+  ],
+  "_from": "../d-11812-24153-c5nngr.19u1eb3xr/package.tgz",
+  "_id": "parchment-syntax@0.4.1",
+  "_inCache": true,
   "_location": "/parchment-syntax",
   "_phantomChildren": {},
   "_requested": {
-    "type": "file",
-    "where": "/tmp/apm-install-dir-117913-2395-78fpqg.po5sh",
-    "raw": "/tmp/d-117913-2395-t8en6m.sknzn/package.tgz",
-    "rawSpec": "/tmp/d-117913-2395-t8en6m.sknzn/package.tgz",
-    "saveSpec": "file:/tmp/d-117913-2395-t8en6m.sknzn/package.tgz",
-    "fetchSpec": "/tmp/d-117913-2395-t8en6m.sknzn/package.tgz"
+    "raw": "/tmp/d-11812-24153-c5nngr.19u1eb3xr/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-11812-24153-c5nngr.19u1eb3xr/package.tgz",
+    "spec": "/tmp/d-11812-24153-c5nngr.19u1eb3xr/package.tgz",
+    "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-117913-2395-t8en6m.sknzn/package.tgz",
-  "_spec": "/tmp/d-117913-2395-t8en6m.sknzn/package.tgz",
-  "_where": "/tmp/apm-install-dir-117913-2395-78fpqg.po5sh",
+  "_resolved": "file:../d-11812-24153-c5nngr.19u1eb3xr/package.tgz",
+  "_shasum": "917211b94f15c728776a76a9fba481e8f35ae205",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-11812-24153-c5nngr.19u1eb3xr/package.tgz",
+  "_where": "/tmp/apm-install-dir-11812-24153-15nf3qo.g2kgwrk9",
   "bugs": {
     "url": "https://github.com/neumond/parchment-syntax/issues"
   },
-  "bundleDependencies": false,
-  "deprecated": false,
+  "dependencies": {},
   "description": "Parchment and colored pens",
+  "devDependencies": {},
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
@@ -37,20 +53,13 @@
   ],
   "license": "MIT",
   "name": "parchment-syntax",
+  "optionalDependencies": {},
+  "readme": "# parchment-syntax theme\n\nTheme is still WIP.\n\nAdapted for:\n- Python (MagicPython)\n- Lua\n- Javascript\n- Markdown\n- HTML\n- CSS/Less\n- Json\n- Yaml\n\n![Screenshot here](https://user-images.githubusercontent.com/3260024/34928484-ef81ff0a-f9ce-11e7-9e54-8b8542ade870.png)\n\n## TODO\n\n- Thin red must be darker than bold\n- .less :not operator\n",
+  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/neumond/parchment-syntax.git"
   },
   "theme": "syntax",
-  "version": "0.3.2",
-  "_atomModuleCache": {
-    "version": 1,
-    "dependencies": [],
-    "extensions": {
-      ".json": [
-        "package.json"
-      ]
-    },
-    "folders": []
-  }
+  "version": "0.4.1"
 }

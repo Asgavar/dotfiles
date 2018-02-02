@@ -2,40 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-11785-13498-1b5x0pl.adxulkgldi/package.tgz",
+        "raw": "/tmp/d-11812-24186-s2pswt.ofsh7rdx6r/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-11785-13498-1b5x0pl.adxulkgldi/package.tgz",
-        "spec": "/tmp/d-11785-13498-1b5x0pl.adxulkgldi/package.tgz",
+        "rawSpec": "/tmp/d-11812-24186-s2pswt.ofsh7rdx6r/package.tgz",
+        "spec": "/tmp/d-11812-24186-s2pswt.ofsh7rdx6r/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-11785-13498-cr05mc.qgr7vcayvi"
+      "/tmp/apm-install-dir-11812-24186-dfkr.km2vx3whfr"
     ]
   ],
-  "_from": "../d-11785-13498-1b5x0pl.adxulkgldi/package.tgz",
-  "_id": "regex-railroad-diagram@0.19.3",
+  "_from": "../d-11812-24186-s2pswt.ofsh7rdx6r/package.tgz",
+  "_id": "regex-railroad-diagram@0.19.4",
   "_inCache": true,
-  "_installable": true,
   "_location": "/regex-railroad-diagram",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11785-13498-1b5x0pl.adxulkgldi/package.tgz",
+    "raw": "/tmp/d-11812-24186-s2pswt.ofsh7rdx6r/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-11785-13498-1b5x0pl.adxulkgldi/package.tgz",
-    "spec": "/tmp/d-11785-13498-1b5x0pl.adxulkgldi/package.tgz",
+    "rawSpec": "/tmp/d-11812-24186-s2pswt.ofsh7rdx6r/package.tgz",
+    "spec": "/tmp/d-11812-24186-s2pswt.ofsh7rdx6r/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11785-13498-1b5x0pl.adxulkgldi/package.tgz",
-  "_shasum": "baf06efbdea34e30f6aba588959d1c3478420252",
+  "_resolved": "file:../d-11812-24186-s2pswt.ofsh7rdx6r/package.tgz",
+  "_shasum": "7ad86ed1844472eac926a9f45ce376ef5ef4e231",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-11785-13498-1b5x0pl.adxulkgldi/package.tgz",
-  "_where": "/tmp/apm-install-dir-11785-13498-cr05mc.qgr7vcayvi",
+  "_spec": "/tmp/d-11812-24186-s2pswt.ofsh7rdx6r/package.tgz",
+  "_where": "/tmp/apm-install-dir-11812-24186-dfkr.km2vx3whfr",
   "bugs": {
     "url": "https://github.com/klorenz/atom-regex-railroad-diagrams/issues"
   },
@@ -62,5 +61,5 @@
     "type": "git",
     "url": "git+https://github.com/klorenz/atom-regex-railroad-diagrams.git"
   },
-  "version": "0.19.3"
+  "version": "0.19.4"
 }

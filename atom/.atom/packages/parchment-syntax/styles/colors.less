@@ -1,30 +1,111 @@
+// backgrounds
+
 @paper: #e4ceb1;
-@regular_: #000000;
+@paper-highlight: lighten(@paper, 5%);
 
-@red_: #b81111;
-@purple_: #95358f;
-@green: #0f693c;
-@brown_: #605046;
-@lightbrown: #a1826c;
-@darkblue_: #2a3680;
-@lightblue_: #3b6481;
-@dimred_: mix(@brown_, @red_, 50%);
-@dimdarkblue_: mix(@brown_, @darkblue_, 25%);
 
-@purple: @regular_;
-@regular: @brown_;
-@darkblue: @dimred_;
-@brown: @lightblue_;
-@red: @purple_;
-@lightblue: @dimdarkblue_;
+// primary colors
 
-@control: @purple;  // flow control keywords
-@entity: @red;  // function names
-@operator: @lightbrown;
-@punctuation: @lightbrown;
-@string: @brown;
-@comment: mix(@paper, @lightbrown, 20%);
-@builtins: @darkblue;
+@black: #000000;
+@brown: #885e30;
+@red: #ae4545;
+@purple: #852f5f;
+@green: #526b27;
 
-@linter-warning: @lightblue_;
-@linter-error: @red_;
+
+// rare colors
+
+@lightbrown: mix(@paper, @brown, 45%);
+@darkblue: #2a3680;
+@lightblue: #3b6481;
+@orange: #b67922;
+
+
+// syntax ----------------
+
+@plaintext: @black;
+@code: @black;
+@keywords: @red;
+@functitle: @purple;  // function names
+
+@operator: @brown;
+@punctuation: @brown;
+@comment: @lightbrown;
+
+@string: @green;
+@number: @purple;
+@constant: @purple;
+
+@builtins: @red;
+@self: @brown;
+@todo: @purple;
+@debugger: @darkblue;
+
+@assoc-key: @black;
+@assoc-value: @brown;
+@string-format-brackets: @purple;
+
+@css-selector: @assoc-key;
+@css-property: @darkblue;
+@css-property-unrecognized: @plaintext;
+@css-important: @red;
+@css-variable: @purple;
+@css-operator: @red;
+@css-function: @red;
+@css-constant: @lightblue;
+
+@html-text: @black;
+@html-brackets: @brown;
+@html-tag: @red;
+@html-attr-name: @purple;
+@html-doctype: @purple;
+
+@yaml-entry: @red;
+
+@markdown-heading-1: @red;
+@markdown-heading-2: @green;
+@markdown-heading-3: mix(@orange, @red, 33%);
+@markdown-heading-4: mix(@orange, @green, 50%);
+@markdown-heading-5: mix(@orange, @red, 67%);
+@markdown-heading-6: @orange;
+@markdown-table: @plaintext;
+@markdown-table-border: @red;
+@markdown-inline-code: @red;
+@markdown-punct: @red;
+@markdown-link: @purple;
+@markdown-link-text: @red;
+
+@python-docstring-prompt: @purple;
+@python-keyword-argument: @plaintext;
+@python-import-all: @red;
+@python-decorator: @purple;
+
+@js-braces: @punctuation;
+
+@shell-variable: @purple;
+
+// editor ----------------
+
+@linter-warning: @orange;
+@linter-error: @red;
+
+@git-line-added: @green;
+@git-line-modified: @brown;
+@git-line-removed: @red;
+
+@gutter-folding: @purple;
+
+// complex styles---------
+
+.keyword() {
+    color: @keywords;
+    font-weight: bold;
+}
+.functitle() {
+    color: @functitle;
+    // font-weight: bold;
+}
+.debugger() {
+    color: @debugger;
+    font-weight: bold;
+}

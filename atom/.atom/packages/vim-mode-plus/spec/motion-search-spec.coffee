@@ -2,14 +2,14 @@
 settings = require '../lib/settings'
 
 describe "Motion Search", ->
-  [set, ensure, keystroke, editor, editorElement, vimState] = []
+  [set, ensure, editor, editorElement, vimState] = []
 
   beforeEach ->
     jasmine.attachToDOM(getView(atom.workspace))
     getVimState (state, _vim) ->
       vimState = state # to refer as vimState later.
       {editor, editorElement} = vimState
-      {set, ensure, keystroke} = _vim
+      {set, ensure} = _vim
 
   describe "the / keybinding", ->
     pane = null
@@ -18,43 +18,42 @@ describe "Motion Search", ->
       pane = {activate: jasmine.createSpy("activate")}
       set
         text: """
-            abc
-            def
-            abc
-            def\n
+          abc
+          def
+          abc
+          def\n
           """
         cursor: [0, 0]
       spyOn(atom.workspace, 'getActivePane').andReturn(pane)
 
     describe "as a motion", ->
       it "moves the cursor to the specified search pattern", ->
-        ensure ['/', search: 'def'],
-          cursor: [1, 0]
+        ensure '/ def enter', cursor: [1, 0]
         expect(pane.activate).toHaveBeenCalled()
 
       it "loops back around", ->
         set cursor: [3, 0]
-        ensure ['/', search: 'def'], cursor: [1, 0]
+        ensure '/ def enter', cursor: [1, 0]
 
       it "uses a valid regex as a regex", ->
         # Cycle through the 'abc' on the first line with a character pattern
-        ensure ['/', search: '[abc]'], cursor: [0, 1]
+        ensure '/ [abc] enter', cursor: [0, 1]
         ensure 'n', cursor: [0, 2]
 
       it "uses an invalid regex as a literal string", ->
         # Go straight to the literal [abc
         set text: "abc\n[abc]\n"
-        ensure ['/', search: '[abc'], cursor: [1, 0]
+        ensure '/ [abc enter', cursor: [1, 0]
         ensure 'n', cursor: [1, 0]
 
       it "uses ? as a literal string", ->
         set text: "abc\n[a?c?\n"
-        ensure ['/', search: '?'], cursor: [1, 2]
+        ensure '/ ? enter', cursor: [1, 2]
         ensure 'n', cursor: [1, 4]
 
       it 'works with selection in visual mode', ->
         set text: 'one two three'
-        ensure ['v /', search: 'th'], cursor: [0, 9]
+        ensure 'v / th enter', cursor: [0, 9]
         ensure 'd', text: 'hree'
 
       it 'extends selection when repeating search in visual mode', ->
@@ -64,13 +63,13 @@ describe "Motion Search", ->
           line3
           """
 
-        ensure ['v /', search: 'line'],
+        ensure 'v / line enter',
           selectedBufferRange: [[0, 0], [1, 1]]
         ensure 'n',
           selectedBufferRange: [[0, 0], [2, 1]]
 
       it 'searches to the correct column in visual linewise mode', ->
-        ensure ['V /', search: 'ef'],
+        ensure 'V / ef enter',
           selectedText: "abc\ndef\n",
           propertyHead: [1, 1]
           cursor: [2, 0]
@@ -81,8 +80,7 @@ describe "Motion Search", ->
           abc def
           def\n
           """
-        ensure ['V /', search: 'ef'],
-          selectedText: "abc def\n",
+        ensure 'V / ef enter', selectedText: "abc def\n",
 
       describe "case sensitivity", ->
         beforeEach ->
@@ -91,15 +89,15 @@ describe "Motion Search", ->
             cursor: [0, 0]
 
         it "works in case sensitive mode", ->
-          ensure ['/', search: 'ABC'], cursor: [2, 0]
+          ensure '/ ABC enter', cursor: [2, 0]
           ensure 'n', cursor: [2, 0]
 
         it "works in case insensitive mode", ->
-          ensure ['/', search: '\\cAbC'], cursor: [1, 0]
+          ensure '/ \\cAbC enter', cursor: [1, 0]
           ensure 'n', cursor: [2, 0]
 
         it "works in case insensitive mode wherever \\c is", ->
-          ensure ['/', search: 'AbC\\c'], cursor: [1, 0]
+          ensure '/ AbC\\c enter', cursor: [1, 0]
           ensure 'n', cursor: [2, 0]
 
         describe "when ignoreCaseForSearch is enabled", ->
@@ -107,11 +105,11 @@ describe "Motion Search", ->
             settings.set 'ignoreCaseForSearch', true
 
           it "ignore case when search [case-1]", ->
-            ensure ['/', search: 'abc'], cursor: [1, 0]
+            ensure '/ abc enter', cursor: [1, 0]
             ensure 'n', cursor: [2, 0]
 
           it "ignore case when search [case-2]", ->
-            ensure ['/', search: 'ABC'], cursor: [1, 0]
+            ensure '/ ABC enter', cursor: [1, 0]
             ensure 'n', cursor: [2, 0]
 
         describe "when useSmartcaseForSearch is enabled", ->
@@ -119,17 +117,17 @@ describe "Motion Search", ->
             settings.set 'useSmartcaseForSearch', true
 
           it "ignore case when searh term includes A-Z", ->
-            ensure ['/', search: 'ABC'], cursor: [2, 0]
+            ensure '/ ABC enter', cursor: [2, 0]
             ensure 'n', cursor: [2, 0]
 
           it "ignore case when searh term NOT includes A-Z regardress of `ignoreCaseForSearch`", ->
             settings.set 'ignoreCaseForSearch', false # default
-            ensure ['/', search: 'abc'], cursor: [1, 0]
+            ensure '/ abc enter', cursor: [1, 0]
             ensure 'n', cursor: [2, 0]
 
           it "ignore case when searh term NOT includes A-Z regardress of `ignoreCaseForSearch`", ->
             settings.set 'ignoreCaseForSearch', true # default
-            ensure ['/', search: 'abc'], cursor: [1, 0]
+            ensure '/ abc enter', cursor: [1, 0]
             ensure 'n', cursor: [2, 0]
 
       describe "repeating", ->
@@ -141,13 +139,17 @@ describe "Motion Search", ->
 
       describe "repeating with search history", ->
         beforeEach ->
-          keystroke ['/', search: 'def']
+          ensure '/ def enter'
 
         it "repeats previous search with /<enter>", ->
-          ensure ['/', search: ''], cursor: [3, 0]
+          ensure '/  enter', cursor: [3, 0]
 
-        it "repeats previous search with //", ->
-          ensure ['/', search: '/'], cursor: [3, 0]
+        describe "non-incrementalSearch only feature", ->
+          beforeEach ->
+            settings.set("incrementalSearch", false)
+
+          it "repeats previous search with //", ->
+            ensure '/ / enter', cursor: [3, 0]
 
         describe "the n keybinding", ->
           it "repeats the last search", ->
@@ -161,32 +163,36 @@ describe "Motion Search", ->
 
       describe "composing", ->
         it "composes with operators", ->
-          ensure ['d /', search: 'def'], text: "def\nabc\ndef\n"
+          ensure 'd / def enter', text: "def\nabc\ndef\n"
 
         it "repeats correctly with operators", ->
-          ensure ['d /', search: 'def', '.'],
-            text: "def\n"
+          ensure 'd / def enter', text: "def\nabc\ndef\n"
+          ensure '.', text: "def\n"
 
     describe "when reversed as ?", ->
       it "moves the cursor backwards to the specified search pattern", ->
-        ensure ['?', search: 'def'], cursor: [3, 0]
+        ensure '? def enter', cursor: [3, 0]
 
       it "accepts / as a literal search pattern", ->
         set
           text: "abc\nd/f\nabc\nd/f\n"
           cursor: [0, 0]
-        ensure ['?', search: '/'], cursor: [3, 1]
-        ensure ['?', search: '/'], cursor: [1, 1]
+        ensure '? / enter', cursor: [3, 1]
+        ensure '? / enter', cursor: [1, 1]
 
       describe "repeating", ->
         beforeEach ->
-          keystroke ['?', search: 'def']
+          ensure '? def enter'
 
         it "repeats previous search as reversed with ?<enter>", ->
-          ensure ['?', search: ''], cursor: [1, 0]
+          ensure "? enter", cursor: [1, 0]
 
-        it "repeats previous search as reversed with ??", ->
-          ensure ['?', search: '?'], cursor: [1, 0]
+        describe "non-incrementalSearch only feature", ->
+          beforeEach ->
+            settings.set("incrementalSearch", false)
+
+          it "repeats previous search as reversed with ??", ->
+            ensure '? ? enter', cursor: [1, 0]
 
         describe 'the n keybinding', ->
           it "repeats the last search backwards", ->
@@ -205,18 +211,18 @@ describe "Motion Search", ->
         expect(inputEditor.getModel().getText()).toEqual(text)
 
       beforeEach ->
-        ensure ['/', search: 'def'], cursor: [1, 0]
-        ensure ['/', search: 'abc'], cursor: [2, 0]
+        ensure '/ def enter', cursor: [1, 0]
+        ensure '/ abc enter', cursor: [2, 0]
         inputEditor = vimState.searchInput.editorElement
 
       it "allows searching history in the search field", ->
-        keystroke '/'
+        ensure '/'
         ensureInputEditor 'core:move-up', text: 'abc'
         ensureInputEditor 'core:move-up', text: 'def'
         ensureInputEditor 'core:move-up', text: 'def'
 
       it "resets the search field to empty when scrolling back", ->
-        keystroke '/'
+        ensure '/'
         ensureInputEditor 'core:move-up', text: 'abc'
         ensureInputEditor 'core:move-up', text: 'def'
         ensureInputEditor 'core:move-down', text: 'abc'
@@ -236,19 +242,19 @@ describe "Motion Search", ->
           expect(text).toEqual(options.text)
 
         if options.mode?
-          ensure {mode: options.mode}
+          ensure null, {mode: options.mode}
 
       beforeEach ->
         jasmine.attachToDOM(getView(atom.workspace))
         settings.set('highlightSearch', true)
         expect(vimState.highlightSearch.hasMarkers()).toBe(false)
-        ensure ['/', search: 'def'], cursor: [1, 0]
+        ensure '/ def enter', cursor: [1, 0]
 
       describe "clearHighlightSearch command", ->
         it "clear highlightSearch marker", ->
           ensureHightlightSearch length: 2, text: ["def", "def"], mode: 'normal'
           dispatch(editorElement, 'vim-mode-plus:clear-highlight-search')
-          expect(vimState.highlightSearch.hasMarkers()).toBe(false)
+          ensureHightlightSearch length: 0, mode: 'normal'
 
       describe "clearHighlightSearchOnResetNormalMode", ->
         describe "when disabled", ->
@@ -263,12 +269,21 @@ describe "Motion Search", ->
             settings.set('clearHighlightSearchOnResetNormalMode', true)
             ensureHightlightSearch length: 2, text: ["def", "def"], mode: 'normal'
             ensure "escape", mode: 'normal'
-            expect(vimState.highlightSearch.hasMarkers()).toBe(false)
-            ensure mode: 'normal'
+            ensureHightlightSearch length: 0, mode: 'normal'
+
+      describe "toggle-highlight-search command", ->
+        it "toggle highlightSearch config and re-hihighlight on re-enabled", ->
+          runs ->
+            expect(settings.get("highlightSearch")).toBe(true)
+            ensureHightlightSearch length: 2, text: ["def", "def"], mode: 'normal'
+            dispatch(editorElement, 'vim-mode-plus:toggle-highlight-search')
+            ensureHightlightSearch length: 0, mode: 'normal'
+            dispatch(editorElement, 'vim-mode-plus:toggle-highlight-search')
+            expect(settings.get("highlightSearch")).toBe(true)
+            ensureHightlightSearch length: 2, text: ["def", "def"], mode: 'normal'
 
   describe "IncrementalSearch", ->
     beforeEach ->
-      settings.set('incrementalSearch', true)
       jasmine.attachToDOM(getView(atom.workspace))
 
     describe "with multiple-cursors", ->
@@ -283,14 +298,14 @@ describe "Motion Search", ->
           cursor: [[0, 0], [1, 0]]
 
       it "[forward] move each cursor to match", ->
-        ensure ['/', search: 'abc'], cursor: [[0, 6], [1, 6]]
+        ensure '/ abc enter', cursor: [[0, 6], [1, 6]]
       it "[forward: count specified], move each cursor to match", ->
-        ensure ['2 /', search: 'abc'], cursor: [[1, 6], [2, 6]]
+        ensure '2 / abc enter', cursor: [[1, 6], [2, 6]]
 
       it "[backward] move each cursor to match", ->
-        ensure ['?', search: 'abc'], cursor: [[3, 6], [0, 6]]
+        ensure '? abc enter', cursor: [[3, 6], [0, 6]]
       it "[backward: count specified] move each cursor to match", ->
-        ensure ['2 ?', search: 'abc'], cursor: [[2, 6], [3, 6]]
+        ensure '2 ? abc enter', cursor: [[2, 6], [3, 6]]
 
     describe "blank input repeat last search", ->
       beforeEach ->
@@ -305,20 +320,20 @@ describe "Motion Search", ->
 
       it "Do nothing when search history is empty", ->
         set cursor: [2, 1]
-        ensure ['/', search: ''], cursor: [2, 1]
-        ensure ['?', search: ''], cursor: [2, 1]
+        ensure '/  enter', cursor: [2, 1]
+        ensure '?  enter', cursor: [2, 1]
 
       it "Repeat forward direction", ->
         set cursor: [0, 0]
-        ensure ['/', search: 'abc'], cursor: [0, 6]
-        ensure ['/', search: ''], cursor: [1, 6]
-        ensure ['2 /', search: ''], cursor: [3, 6]
+        ensure '/ abc enter', cursor: [0, 6]
+        ensure '/  enter', cursor: [1, 6]
+        ensure '2 /  enter', cursor: [3, 6]
 
       it "Repeat backward direction", ->
         set cursor: [4, 0]
-        ensure ['?', search: 'abc'], cursor: [3, 6]
-        ensure ['?', search: ''], cursor: [2, 6]
-        ensure ['2 ?', search: ''], cursor: [0, 6]
+        ensure '? abc enter', cursor: [3, 6]
+        ensure '?  enter', cursor: [2, 6]
+        ensure '2 ?  enter', cursor: [0, 6]
 
   describe "the * keybinding", ->
     beforeEach ->
@@ -568,33 +583,33 @@ describe "Motion Search", ->
             """
         describe "when open and close pair is not at cursor line", ->
           it "fail to move", ->
-            set cursor: [0, 0]
+            set         cursor: [0, 0]
             ensure '%', cursor: [0, 0]
           it "fail to move", ->
-            set cursor: [2, 0]
+            set         cursor: [2, 0]
             ensure '%', cursor: [2, 0]
         describe "when open pair is forwarding to cursor in same row", ->
           it "move to closing pair", ->
-            set cursor: [1, 0]
+            set         cursor: [1, 0]
             ensure '%', cursor: [3, 3]
         describe "when cursor position is greater than open pair", ->
           it "fail to move", ->
-            set cursor: [1, 4]
+            set         cursor: [1, 4]
             ensure '%', cursor: [1, 4]
         describe "when close pair is forwarding to cursor in same row", ->
           it "move to closing pair", ->
-            set cursor: [3, 0]
+            set         cursor: [3, 0]
             ensure '%', cursor: [1, 3]
 
     describe "CurlyBracket", ->
       beforeEach ->
         set text: "{___}"
       it "cursor is at open pair, it move to closing pair", ->
-        set cursor: [0, 0]
+        set         cursor: [0, 0]
         ensure '%', cursor: [0, 4]
         ensure '%', cursor: [0, 0]
       it "cursor is at close pair, it move to open pair", ->
-        set cursor: [0, 4]
+        set         cursor: [0, 4]
         ensure '%', cursor: [0, 0]
         ensure '%', cursor: [0, 4]
 
@@ -602,11 +617,11 @@ describe "Motion Search", ->
       beforeEach ->
         set text: "[___]"
       it "cursor is at open pair, it move to closing pair", ->
-        set cursor: [0, 0]
+        set         cursor: [0, 0]
         ensure '%', cursor: [0, 4]
         ensure '%', cursor: [0, 0]
       it "cursor is at close pair, it move to open pair", ->
-        set cursor: [0, 4]
+        set         cursor: [0, 4]
         ensure '%', cursor: [0, 0]
         ensure '%', cursor: [0, 4]
 
@@ -645,3 +660,15 @@ describe "Motion Search", ->
         set cursor: [4, 2]; ensure '%', cursor: [0, 1]
         set cursor: [4, 3]; ensure '%', cursor: [0, 1]
         set cursor: [4, 4]; ensure '%', cursor: [0, 1]
+
+  describe "[regression guard] repeat(n or N) after used as operator target", ->
+    it "repeat after d /", ->
+      set                   textC: "a1    |a2    a3    a4"
+      ensure "d / a enter", textC: "a1    |a3    a4",      mode: "normal", selectedText: ""
+      ensure "n",           textC: "a1    a3    |a4",      mode: "normal", selectedText: ""
+      ensure "N",           textC: "a1    |a3    a4",      mode: "normal", selectedText: ""
+    it "repeat after d ?", ->
+      set                   textC: "a1    a2    |a3    a4"
+      ensure "d ? a enter", textC: "a1    |a3    a4", mode: "normal", selectedText: ""
+      ensure "n",           textC: "|a1    a3    a4", mode: "normal", selectedText: ""
+      ensure "N",           textC: "a1    |a3    a4", mode: "normal", selectedText: ""

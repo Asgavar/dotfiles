@@ -1,11 +1,8 @@
-.syntax--storage {
-    color: @control;
+.syntax--storage, .syntax--control {
+    .keyword();
 }
-.syntax--control {
-    color: @control;
-}
-.syntax--entity {
-    color: @entity;
+.syntax--entity.syntax--name {
+    .functitle();
 }
 .syntax--operator {
     color: @operator;
@@ -15,20 +12,46 @@
 }
 .syntax--string {
     color: @string;
+
+    &.syntax--regexp {
+        .syntax--punctuation,
+        .syntax--operator,
+        .syntax--begin,
+        .syntax--end {
+            color: @string-format-brackets;
+        }
+
+        .syntax--control {
+            font-weight: normal;
+        }
+    }
 }
 .syntax--comment {
     color: @comment;
+    font-style: italic;
 }
-.syntax--support {
+// .syntax--support {
+//     color: @builtins;
+// }
+.syntax--builtin,
+.syntax--support.syntax--function,
+.syntax--support.syntax--type {
     color: @builtins;
 }
 .syntax--constant {
-    &.syntax--numeric, &.syntax--caps, &.syntax--language {
-        color: @green;
+    &.syntax--numeric {
+        color: @number;
+    }
+    &.syntax--caps, &.syntax--language {
+        color: @constant;
     }
 }
-.syntax--codetag, .syntax--todo, .syntax--note {
-    color: @green;
+.syntax--codetag, .syntax--todo, .syntax--note, .syntax--fixme {
+    color: @todo;
+    font-weight: normal;
+}
+.syntax--self, .syntax--cls {
+    color: @self;
 }
 
 // language specific styles
@@ -36,30 +59,49 @@
 
 .syntax--paragraph {
     // raw .txt files
-    color: @regular_;
+    color: @plaintext;
 }
 
 .syntax--md {
     &.syntax--text {
-        color: @regular_;
+        color: @plaintext;
         .syntax--embedded {
-            color: @regular;
+            color: @code;
         }
     }
     &.syntax--italic {
         font-style: italic;
     }
+    &.syntax--bold {
+        font-weight: bold;
+    }
+    &.syntax--underline {
+        text-decoration: underline;
+    }
+    &.syntax--strike {
+        text-decoration: line-through;
+        text-decoration-color: rgba(0, 0, 0, 0.2);
+    }
+    &.syntax--punctuation {
+        color: @markdown-punct;
+    }
     &.syntax--code.syntax--raw {
-        color: @regular;
+        color: @markdown-inline-code;
+        .syntax--punctuation {
+            color: @markdown-inline-code;
+        }
     }
-    .syntax--link.syntax--markup {
-        color: @dimred_;
-    }
-    &.syntax--link.syntax--text {
-        color: @dimred_;
-    }
-    &.syntax--link.syntax--uri {
-        color: @dimdarkblue_;
+    &.syntax--link {
+        color: @markdown-link;
+        .syntax--punctuation {
+            color: @markdown-link;
+        }
+        &.syntax--text, &.syntax--image {
+            color: @markdown-link-text;
+            .syntax--punctuation {
+                color: @markdown-link-text;
+            }
+        }
     }
     &.syntax--heading-1,
     &.syntax--heading-2,
@@ -67,195 +109,321 @@
     &.syntax--heading-4,
     &.syntax--heading-5,
     &.syntax--heading-6 {
-        color: @purple_;
+        font-weight: bold;
+        font-style: oblique;
+    }
+    &.syntax--heading-1 {
+        color: @markdown-heading-1;
         .syntax--punctuation {
-            color: @purple_;
+            color: @markdown-heading-1;
+        }
+    }
+    &.syntax--heading-2 {
+        color: @markdown-heading-2;
+        .syntax--punctuation {
+            color: @markdown-heading-2;
+        }
+    }
+    &.syntax--heading-3 {
+        color: @markdown-heading-3;
+        .syntax--punctuation {
+            color: @markdown-heading-3;
+        }
+    }
+    &.syntax--heading-4 {
+        color: @markdown-heading-4;
+        .syntax--punctuation {
+            color: @markdown-heading-4;
+        }
+    }
+    &.syntax--heading-5 {
+        color: @markdown-heading-5;
+        .syntax--punctuation {
+            color: @markdown-heading-5;
+        }
+    }
+    &.syntax--heading-6 {
+        color: @markdown-heading-6;
+        .syntax--punctuation {
+            color: @markdown-heading-6;
+        }
+    }
+    &.syntax--storage.syntax--table {
+        color: @markdown-table;
+        font-weight: normal;
+        .syntax--punctuation {
+            color: @markdown-table-border;
         }
     }
 }
 
 .syntax--python {
     &.syntax--lambda {
-        color: @control;
+        color: @keywords;
         &.syntax--punctuation {
             color: @punctuation;
         }
         .syntax--parameter {
-            color: @regular;
+            color: @code;
         }
-    }
-    &.syntax--self, &.syntax--cls {
-        color: @lightblue;
     }
     &.syntax--docstring {
         color: @comment;
         .syntax--flow {
-            color: @green;
+            color: @python-docstring-prompt;
+            font-weight: normal;
         }
     }
-    &.syntax--arguments .syntax--parameter {  // keyword parameters
-        color: @lightblue;
+    &.syntax--arguments .syntax--parameter {
+        color: @python-keyword-argument;
     }
     &.syntax--decorator.syntax--entity {
-        color: @darkblue_;
+        color: @python-decorator;
     }
-    &.syntax--string &.syntax--format {
-        color: @green;
+    &.syntax--string, &.syntax--fstring {
+        .syntax--storage {
+            font-weight: normal;
+        }
+        .syntax--format {
+            color: @string-format-brackets;
+        }
     }
     &.syntax--keyword.syntax--operator.syntax--logical {
-        color: @control;
+        .keyword();
     }
-}
+    &.syntax--keyword.syntax--import + &.syntax--keyword.syntax--operator.syntax--arithmetic {
+        color: @python-import-all;
+    }
 
-.syntax--shell {
-    &.syntax--variable {
-        color: @lightblue;
-    }
-}
-
-.syntax--java {
-    &.syntax--method.syntax--body &.syntax--entity {
-        color: @darkblue;
-    }
-    &.syntax--keyword.syntax--operator.syntax--instanceof {
-        color: @control;
-    }
-    &.syntax--storage.syntax--type {
-        color: @lightblue;
-        &.syntax--annotation {
-            color: @darkblue;
-        }
-    }
-    &.syntax--import, &.syntax--package {
-        &.syntax--keyword {
-            color: @purple;
-        }
-        &.syntax--storage {
-            color: @regular;
-        }
-    }
-    &.syntax--storage.syntax--type {
-        color: @darkblue;
-    }
 }
 
 .syntax--js {
-    &.syntax--entity.syntax--name.syntax--function {
-        color: @darkblue;
+    &.syntax--entity.syntax--name {
+        color: @code;
     }
-    &.syntax--storage.syntax--function + &.syntax--entity.syntax--name.syntax--function {
-        color: @entity;
+    &.syntax--support.syntax--function {
+        color: @code;
     }
-    &.syntax--new + &.syntax--entity.syntax--name.syntax--type.syntax--instance {
-        color: @darkblue;
+    &.syntax--meta.syntax--brace {
+        &.syntax--curly, &.syntax--square {
+            color: @js-braces;
+        }
+        &.syntax--round {
+            color: @punctuation;
+        }
+    }
+    &.syntax--meta.syntax--delimiter {
+        color: @punctuation;
+    }
+    &.syntax--storage.syntax--function + &.syntax--entity.syntax--name.syntax--function,
+    &.syntax--class.syntax--name,
+    &.syntax--inherited-class {
+        .functitle();
     }
     &.syntax--keyword.syntax--operator {
-        &.syntax--new, &.syntax--typeof {
-            color: @control;
+        &.syntax--new, &.syntax--typeof,
+        &.syntax--in, &.syntax--delete, &.syntax--of,
+        &.syntax--getter, &.syntax--setter,
+        &.syntax--instanceof {
+            .keyword();
         }
         &.syntax--logical {
             color: @operator;
         }
     }
-}
-
-.syntax--ruby {
-    &.syntax--keyword.syntax--special-method {
-        color: @control;
-    }
-}
-
-.syntax--rust {
-    &.syntax--keyword {
-        color: @control;
-    }
-}
-
-.syntax--go {
-    &.syntax--keyword {
-        color: @purple;
-    }
-}
-
-.syntax--css {
-    &.syntax--entity {
-        color: @regular_;
-    }
     &.syntax--support {
-        color: @dimdarkblue_;
-    }
-    &.syntax--important {
-        color: @purple_;
-    }
-    &.syntax--support.syntax--constant.syntax--property-value {
-        color: @lightblue_;
-    }
-    &.syntax--constant {
-        &.syntax--color, &.syntax--rgb-value {
-            color: @green;
-            .syntax--punctuation {
-                color: @green;
-            }
+        &.syntax--class, &.syntax--function,
+        &.syntax--variable:not(.syntax--property) {
+            color: @builtins;
         }
     }
-    &.syntax--keyword.syntax--at-rule {
-        color: @purple_;
-        .syntax--punctuation {
-            color: @purple_;
-        }
+    &.syntax--console {
+        color: @builtins !important;
     }
-    &.syntax--keyword.syntax--unit {
-        color: @brown_;
+    &.syntax--entity.syntax--constructor {
+        color: @builtins;
+    }
+    &.syntax--debugger {
+        .debugger();
+    }
+    &.syntax--string .syntax--embedded .syntax--punctuation {
+        color: @string-format-brackets;
     }
 }
 
-.syntax--less {
-    &.syntax--variable {
-        color: @dimred_;
-    }
-    &.syntax--function {
-        color: @purple_;
-    }
-}
-
-.syntax--html {
-    &.syntax--text {
-        color: @brown_;
-    }
-    &.syntax--tag.syntax--name {
-        color: @regular_;
-    }
-    &.syntax--attribute-name {
-        color: @dimred_;
-    }
-    &.syntax--doctype {
-        color: @purple_;
+.syntax--json {
+    &.syntax--key .syntax--string {
+        color: @assoc-key;
     }
 }
 
 .syntax--yaml {
     &.syntax--entity {
-        color: @regular_;
+        color: @assoc-key;
     }
     &.syntax--string {
-        color: @brown_;
+        color: @assoc-value;
     }
     &.syntax--punctuation.syntax--entry {
-        color: @dimred_;
+        color: @yaml-entry;
+    }
+    &.syntax--string.syntax--block {
+        color: @string;
     }
 }
 
+.syntax--html {
+    &.syntax--text {
+        color: @html-text;
+    }
+    &.syntax--punctuation {
+        color: @html-brackets;
+    }
+    &.syntax--tag {
+        color: @html-brackets;
+    }
+    &.syntax--tag.syntax--name {
+        color: @html-tag;
+        font-weight: bold;
+    }
+    &.syntax--attribute-name {
+        color: @html-attr-name;
+    }
+    &.syntax--doctype {
+        color: @html-doctype;
+    }
+    &.syntax--comment .syntax--punctuation {
+        color: @comment;
+    }
+}
+
+.syntax--css {
+    &.syntax--entity {
+        color: @css-selector;
+    }
+    &.syntax--property-name {
+        color: @css-property-unrecognized;
+        &.syntax--support {
+            color: @css-property;
+        }
+    }
+    &.syntax--important {
+        color: @css-important;
+    }
+    &.syntax--constant {
+        color: @css-constant;
+        &.syntax--numeric, &.syntax--color.syntax--rgb-value {
+            color: @number;
+            .syntax--punctuation {
+                color: @number;
+            }
+        }
+    }
+    &.syntax--operator,
+    &.syntax--pseudo-class,
+    &.syntax--pseudo-class .syntax--punctuation {
+        color: @css-operator;
+    }
+    &.syntax--keyword.syntax--at-rule {
+        color: @keywords;
+        .syntax--punctuation {
+            color: @keywords;
+        }
+    }
+    &.syntax--meta.syntax--brace.syntax--round {
+        color: @punctuation;
+    }
+    &.syntax--mixin {
+        color: @css-function;
+    }
+}
+
+.syntax--less {
+    &.syntax--variable {
+        color: @css-variable;
+    }
+    &.syntax--function {
+        color: @css-function;
+    }
+    &.syntax--import {
+        color: @keywords;
+        .syntax--punctuation {
+            color: @keywords;
+        }
+    }
+}
+
+.syntax--lua {
+    &.syntax--any-method {
+        color: @code;
+    }
+}
+
+.syntax--shell {
+    &.syntax--variable {
+        color: @shell-variable;
+    }
+}
+
+
+// need to be redone
+
+
 .syntax--c {
     &.syntax--include &.syntax--punctuation {
-        color: @control;
+        color: @keywords;
     }
     &.syntax--entity {
-        color: @darkblue;
+        color: @red;
     }
 }
 
 .syntax--cpp {
     &.syntax--entity {
+        color: @red;
+    }
+}
+
+.syntax--ruby {
+    &.syntax--keyword.syntax--special-method {
+        color: @keywords;
+    }
+}
+
+.syntax--rust {
+    &.syntax--keyword {
+        color: @keywords;
+    }
+}
+
+.syntax--go {
+    &.syntax--keyword {
+        color: @keywords;
+    }
+}
+
+.syntax--java {
+    &.syntax--method.syntax--body &.syntax--entity {
+        color: @red;
+    }
+    &.syntax--keyword.syntax--operator.syntax--instanceof {
+        color: @keywords;
+    }
+    &.syntax--storage.syntax--type {
         color: @darkblue;
+        &.syntax--annotation {
+            color: @red;
+        }
+    }
+    &.syntax--import, &.syntax--package {
+        &.syntax--keyword {
+            color: @keywords;
+        }
+        &.syntax--storage {
+            color: @code;
+        }
+    }
+    &.syntax--storage.syntax--type {
+        color: @red;
     }
 }

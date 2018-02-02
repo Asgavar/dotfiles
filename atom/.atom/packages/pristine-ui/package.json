@@ -1,28 +1,43 @@
 {
-  "_from": "file:/tmp/d-117921-25563-1p42glj.or8/package.tgz",
-  "_id": "pristine-ui@1.1.10",
-  "_inBundle": false,
-  "_integrity": "sha1-6bK/BFP3zMp5ISGNUm1TFr98hyM=",
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-11812-24179-gn6d7f.r178yf1or/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-11812-24179-gn6d7f.r178yf1or/package.tgz",
+        "spec": "/tmp/d-11812-24179-gn6d7f.r178yf1or/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-11812-24179-18xo5df.pnovsa714i"
+    ]
+  ],
+  "_from": "../d-11812-24179-gn6d7f.r178yf1or/package.tgz",
+  "_id": "pristine-ui@1.1.11",
+  "_inCache": true,
   "_location": "/pristine-ui",
   "_phantomChildren": {},
   "_requested": {
-    "type": "file",
-    "where": "/tmp/apm-install-dir-117921-25563-1yw1pwr.1y3v",
-    "raw": "/tmp/d-117921-25563-1p42glj.or8/package.tgz",
-    "rawSpec": "/tmp/d-117921-25563-1p42glj.or8/package.tgz",
-    "saveSpec": "file:/tmp/d-117921-25563-1p42glj.or8/package.tgz",
-    "fetchSpec": "/tmp/d-117921-25563-1p42glj.or8/package.tgz"
+    "raw": "/tmp/d-11812-24179-gn6d7f.r178yf1or/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-11812-24179-gn6d7f.r178yf1or/package.tgz",
+    "spec": "/tmp/d-11812-24179-gn6d7f.r178yf1or/package.tgz",
+    "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-117921-25563-1p42glj.or8/package.tgz",
-  "_spec": "/tmp/d-117921-25563-1p42glj.or8/package.tgz",
-  "_where": "/tmp/apm-install-dir-117921-25563-1yw1pwr.1y3v",
+  "_resolved": "file:../d-11812-24179-gn6d7f.r178yf1or/package.tgz",
+  "_shasum": "f26af8e138b23ebf60903d1f0b1fc93853b80e4f",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-11812-24179-gn6d7f.r178yf1or/package.tgz",
+  "_where": "/tmp/apm-install-dir-11812-24179-18xo5df.pnovsa714i",
   "bugs": {
     "url": "https://github.com/cdonohue/pristine-ui/issues"
   },
-  "bundleDependencies": false,
   "configSchema": {
     "fontSize": {
       "title": "Font Size",
@@ -56,7 +71,7 @@
       "order": 3
     }
   },
-  "deprecated": false,
+  "dependencies": {},
   "description": "Pristine UI theme",
   "devDependencies": {
     "coffeelint": "^1.9.7"
@@ -75,24 +90,13 @@
   "license": "MIT",
   "main": "lib/main",
   "name": "pristine-ui",
+  "optionalDependencies": {},
+  "readme": "## Pristine UI theme\n> A dark UI theme based off of [One Dark UI](https://atom.io/themes/one-dark-ui)\n\n#### Editing\n![editing](https://raw.githubusercontent.com/cdonohue/pristine-ui/master/screenshots/editor.png)\n\n#### Overlays\n![overlay](https://raw.githubusercontent.com/cdonohue/pristine-ui/master/screenshots/overlay.png)\n> Shown with the [duotone-dark-sky-syntax](https://atom.io/themes/duotone-dark-sky-syntax) syntax theme by simurai. Icons by [file-icons](https://atom.io/packages/file-icons).\n\n### New Features\n\nFile indicator dots and folder scope lines in the tree-view. Also, modified styles for overlays and the status bar.\n#### Tree View\n![tree view](https://raw.githubusercontent.com/cdonohue/pristine-ui/master/screenshots/tree-view.png)\n\n### Install\n\nNavigate to __Settings > Install__ , select __Themes__, and search for `pristine-ui`.\n\nOnce installed, this theme can be activated by going to the __Settings > Themes__ section and selecting \"Pristine UI\" from the __UI Themes__ drop-down menu.\n\n### Settings\n\nSince this theme is forked from One Dark UI, it brings along some nice additions of being able to tailor font and tab sizes.\n\n- Change the __Font Size__ to scale the whole UI up or down.\n- Choose between 3 __Tab Sizing__ modes.\n- Hide the __dock buttons__.\n\n### Customize\n\nIt's also possible to resize only certain areas by adding the following to your styles.less (Use DevTools to find the right selectors):\n\n``` css\n.theme-pristine-ui {\n  .tab-bar { font-size: 18px; }\n  .tree-view { font-size: 14px; }\n  .status-bar { font-size: 12px; }\n}\n```\n\n### Special Thanks\nTo the One Dark UI creators/contributors, without which this theme would not exist.\n",
+  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cdonohue/pristine-ui.git"
   },
   "theme": "ui",
-  "version": "1.1.10",
-  "_atomModuleCache": {
-    "version": 1,
-    "dependencies": [],
-    "extensions": {
-      ".json": [
-        "coffeelint.json",
-        "package.json"
-      ],
-      ".coffee": [
-        "lib/main.coffee"
-      ]
-    },
-    "folders": []
-  }
+  "version": "1.1.11"
 }

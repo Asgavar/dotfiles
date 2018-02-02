@@ -1,4 +1,4 @@
-# vim-mode-plus [![Build Status](https://travis-ci.org/t9md/atom-vim-mode-plus.svg)](https://travis-ci.org/t9md/atom-vim-mode-plus)
+# vim-mode-plus [![Build Status](https://travis-ci.org/t9md/atom-vim-mode-plus.svg)](https://travis-ci.org/t9md/atom-vim-mode-plus) [![BountySource](https://api.bountysource.com/badge/team?team_id=116280&style=raised)](https://www.bountysource.com/teams/atom-vim-mode-plus)
 
 vim-mode improved.
 
@@ -7,14 +7,18 @@ vim-mode improved.
 - [Installation](#installation)
 - [Some Features](#some-features)
 - [Important](#important)
+    - [You must disable vim-mode to use vim-mode-plus](#you-must-disable-vim-mode-to-use-vim-mode-plus)
+    - [From v1.9.0 CoffeeScript based vim-mode-plus extension is no longer supported](#from-v190-coffeescript-based-vim-mode-plus-extension-is-no-longer-supported)
 - [Thanks](#thanks)
 - [Issue report](#issue-report)
 - [Whats this?](#whats-this)
 - [FAQ](#faq)
     - [Why fork? why not directly contribute to official vim-mode?](#why-fork-why-not-directly-contribute-to-official-vim-mode)
+    - [Behavior different from pure Vim?](#behavior-different-from-pure-vim)
     - [In visual-block mode, some motions make the editor slow, freeze.](#in-visual-block-mode-some-motions-make-the-editor-slow-freeze)
     - [ex-mode?](#ex-mode)
     - [Want to suppress autocomplete-plus's auto suggestion except insert-mode.](#want-to-suppress-autocomplete-pluss-auto-suggestion-except-insert-mode)
+    - [Flash effect does not appear on cursor-line, occurrence-marker is not displayed on cursor-line either.](#flash-effect-does-not-appear-on-cursor-line-occurrence-marker-is-not-displayed-on-cursor-line-either)
     - [Surround not work](#surround-not-work)
     - [How can I insert single white space when surround?](#how-can-i-insert-single-white-space-when-surround)
 - [Wiki](#wiki)
@@ -31,22 +35,33 @@ vim-mode improved.
 
 Install using [Atoms package installer](http://flight-manual.atom.io/using-atom/sections/atom-packages/)
 
+`apm install vim-mode-plus`
+
 # Some Features
 
 These features are very powerful, especially for the power user. Read the following documents to learn how to use them.  
 
+- [Movie on youtube to show power of occurrence](https://www.youtube.com/watch?v=01yHgi59ASg&t=119s)
+- [Tweet for quick guide for occurrence](https://twitter.com/t9md/status/928155248283197440)
 - [Advanced Topic Tutorial](https://github.com/t9md/atom-vim-mode-plus/wiki/AdvancedTopicTutorial)
 - [Occurrence Modifier](https://github.com/t9md/atom-vim-mode-plus/wiki/OccurrenceModifier)
 - [CHANGELOG.md](https://github.com/t9md/atom-vim-mode-plus/blob/master/CHANGELOG.md)
 
 # Important
 
-- **vim-mode-plus is replacement for vim-mode, you must disable vim-mode first to use vim-mode-plus**.
+### You must disable vim-mode to use vim-mode-plus
+
 - You don't need the following packages since they're built-in to vim-mode-plus:
   - [vim-surround](https://atom.io/packages/vim-surround): No default keymap. See FAQ section in this doc.
   - [vim-mode-visual-block](https://atom.io/packages/vim-mode-visual-block)
 - Scope for CSS selector and keymap is different from vim-mode, **not compatible**.
 - Internal code base is very different. Thus, issues and PRs should be directly sent to vim-mode-plus. **DON'T report vim-mode-plus's issues or PRs to the official vim-mode.**
+
+### From v1.9.0 CoffeeScript based vim-mode-plus extension is no longer supported
+
+- Now all operations are defined as ES6 class which is NOT extend-able by CoffeeScript.
+  - If you have vmp custom operations in your `init.coffee`, those are no longer working.
+  - See [CHANGELOG](https://github.com/t9md/atom-vim-mode-plus/blob/master/CHANGELOG.md) and [Wiki](https://github.com/t9md/atom-vim-mode-plus/wiki/ExtendVimModePlusInInitFile) for detail.
 
 # Thanks
 
@@ -86,6 +101,11 @@ Search [Q&A](https://github.com/t9md/atom-vim-mode-plus/issues?utf8=%E2%9C%93&q=
 - Changes are [too big](https://github.com/t9md/atom-vim-mode-plus/graphs/contributors).
 - I felt many features are too experimental to merge to the official vim-mode.
 
+### Behavior different from pure Vim?
+
+Some behaviors are intentionally have different default behaviors.
+See [DifferencesFromPureVim](https://github.com/t9md/atom-vim-mode-plus/wiki/DifferencesFromPureVim) for details.
+
 ### In visual-block mode, some motions make the editor slow, freeze.
 
 Not freezing, it's just VERY slow.  
@@ -116,6 +136,11 @@ If you want to directly edit `config.cson`, here it is.
     "vim-mode-plus.insert-mode.replace"
   ]
 ```
+
+### Flash effect does not appear on cursor-line, occurrence-marker is not displayed on cursor-line either.
+
+This is because of the syntax-theme you are using.
+See [this tips on Wiki](https://github.com/t9md/atom-vim-mode-plus/wiki/TIPS#flash-effect-not-appear-on-cursor-line-occurrence-marker-is-not-displayed-on-cursor-line-too).
 
 ### Surround not work
 
@@ -154,8 +179,8 @@ provides <kbd>gf</kbd> to open file under cursor.
 Does not exist in pure Vim, provides clip-board history you can pop yanked text until you get result you want.
 - [choose-pane](https://atom.io/packages/choose-pane)
 Does not exist in pure Vim, provides keyboard navigation between panes/panels by choosing it by label.
-- [paner](https://atom.io/packages/paner)
-provides <kbd>ctrl-w H, J, K, L, x</kbd> to move pane.
+- [keystroke](https://atom.io/packages/keystroke)
+Keystrokes to keystroke keyamp in you `keymap.cson`.
 
 # References
 
@@ -170,7 +195,7 @@ provides <kbd>ctrl-w H, J, K, L, x</kbd> to move pane.
 
 ## Other
 - [operator, the true power of Vim](http://whileimautomaton.net/2008/11/vimm3/operator) by kana.  
-  True power of Vim is Operator and TextOjbect.
+  True power of Vim is Operator and TextObject.
 
 - [List of text-object as vim plugin](https://github.com/kana/vim-textobj-user/wiki)  
   vim-mode-plus builtin textobj for function, fold, entire, comment, indent, line, and any-pair(super set of many pair text-obj)

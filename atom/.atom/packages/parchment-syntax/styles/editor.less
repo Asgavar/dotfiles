@@ -4,18 +4,21 @@
 
 atom-text-editor {
     background-color: @paper;
-    color: @regular;
-
-    .wrap-guide {
-        background-color: @guide;
-    }
+    color: @code;
 
     .indent-guide {
-        color: @guide;
+        box-shadow: inset 1px 0 @guide;
+    }
+    .indent-guide:first-child {
+        box-shadow: none;
     }
 
     .invisible-character {
-        color: @regular;
+        color: darken(@paper, 13%);
+    }
+
+    .wrap-guide {
+        background-color: @guide;
     }
 
     .gutter {
@@ -23,6 +26,10 @@ atom-text-editor {
         color: @lightbrown;
 
         .line-number {
+            @lnpad: 0.8em;
+            @gitborder: 6px;
+
+            padding-left: @lnpad;
             &.cursor-line {
                 // TODO: redo this properly in future
                 // https://github.com/atom/git-diff/issues/71
@@ -30,13 +37,19 @@ atom-text-editor {
                 color: darken(@lightbrown, 5%);
             }
             &.git-line-added {
-                border-left-color: @green;
+                border-left-color: @git-line-added;
+                border-left-width: @gitborder;
+                padding-left: calc(@lnpad ~"-" @gitborder);
             }
             &.git-line-modified {
-                border-left-color: @brown;
+                border-left-color: @git-line-modified;
+                border-left-width: @gitborder;
+                padding-left: calc(@lnpad ~"-" @gitborder);
             }
             &.git-line-removed:before {
-                border-left-color: @red;
+                border-left-color: @git-line-removed;
+                border-width: @gitborder;
+                bottom: -(@gitborder - 1px);
             }
         }
     }
@@ -44,15 +57,15 @@ atom-text-editor {
     .gutter .line-number.folded,
     .gutter .line-number:after,
     .fold-marker:after {
-        color: @entity;
+        color: @gutter-folding;
     }
 
     .invisible {
-        color: @regular;
+        color: @code;
     }
 
     .cursor {
-        border-left: 1.5pt solid @regular;
+        border-left: 1.5pt solid @code;
     }
     .selection .region {
         background-color: @selection;
@@ -89,7 +102,7 @@ atom-text-editor {
 
     // Linter
 
-    .highlight.linter-warning > div {
+    .linter-highlight.linter-warning {
         background-image:
         linear-gradient(45deg, transparent 65%, @linter-warning 80%, transparent 90%),
         linear-gradient(135deg, transparent 5%, @linter-warning 15%, transparent 25%),
@@ -97,7 +110,7 @@ atom-text-editor {
         linear-gradient(45deg, transparent 25%, @linter-warning 35%, transparent 50%)
         !important;
     }
-    .highlight.linter-error > div {
+    .linter-highlight.linter-error {
         background-image:
         linear-gradient(45deg, transparent 65%, @linter-error 80%, transparent 90%),
         linear-gradient(135deg, transparent 5%, @linter-error 15%, transparent 25%),
@@ -105,10 +118,10 @@ atom-text-editor {
         linear-gradient(45deg, transparent 25%, @linter-error 35%, transparent 50%)
         !important;
     }
-    .linter-warning.linter-gutter {
+    .linter-gutter-warning {
         color: @linter-warning !important;
     }
-    .linter-error.linter-gutter {
+    .linter-gutter-error {
         color: @linter-error !important;
     }
 }

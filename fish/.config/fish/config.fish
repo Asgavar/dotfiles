@@ -1,4 +1,5 @@
 cat /home/asgavar/.cache/wal/sequences
+export _JAVA_AWT_WM_NONREPARENTING=1
 export XKB_DEFAULT_LAYOUT=pl
 export XKB_DEFAULT_OPTIONS=caps:swapescape
 export XDG_RUNTIME_DIR=/home/asgavar/.xdg

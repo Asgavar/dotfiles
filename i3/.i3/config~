@@ -3,10 +3,11 @@ set $kolor #212121
 set $napisy #f5f5f5
 
 exec_always python -m pywal -i /home/asgavar/tapeta.jpg
+exec /usr/local/bin/polybar papiesz
 exec_always /usr/bin/compton
 
 set_from_resource $foreground i3wm.color7
-set_from_resource $background i3wm.color2
+set_from_resource $background i32m.color2
 
 font pango:InputMono 10
 
@@ -169,14 +170,12 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec_always /home/asgavar/.config/polybar/launch.sh
-
-#bar {
-#    status_command /home/asgavar/.config/polybar/launch.sh
+bar {
+    status_command /home/asgavar/.config/polybar/launch.sh
     #position top
-#    colors {
-#        statusline #00000000
-#        background #00000000
-#    #    focused_workspace $foreground $background $foreground
-#    }
-#}
+    #colors {
+    #    statusline $foreground
+    #    background $background
+    #    focused_workspace $foreground $background $foreground
+    #}
+}

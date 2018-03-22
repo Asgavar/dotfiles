@@ -65,3 +65,12 @@
   (local-set-key (kbd "C-c C-c") 'recompile))
 
 (add-hook 'csharp-mode-hook 'csharp-mode-setup t)
+
+
+;;; Racket
+
+(defun racket-mode-setup ()
+  (setq tab-always-indent 'complete)
+  (local-set-key [f5] racket-run))
+
+(add-hook 'racket-mode-hook 'racket-mode-setup t)

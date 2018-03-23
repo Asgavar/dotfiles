@@ -77,9 +77,11 @@
 ;;; PHP
 
 (defun php-mode-setup ()
-  (php-enable-psr2-coding-style)
+  (require 'company-php)
+  (c-set-style "psr2")  ; php-enable... renders tab key useless
   (flycheck-mode 1)
-  (company-mode-on)
+  (company-mode t)
+  (ac-php-core-eldoc-setup)
   (make-local-variable 'company-backends)
   (add-to-list 'company-backends 'company-ac-php-backend))
 

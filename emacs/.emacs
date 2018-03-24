@@ -83,13 +83,16 @@
 
 (defun php-mode-setup ()
   (require 'company-php)
+  (require 'ede)
+  (require 'ede-php-autoload-composer)
+  (require 'ede-php-autoload/class-loader)
   (c-set-style "psr2")  ; php-enable... renders tab key useless
   (flycheck-mode 1)
   (company-mode t)
   (ac-php-core-eldoc-setup)
-  (ede-php-autoload-mode)  ; <3
   (set (make-local-variable 'company-backends)
-       '((php-extras-company company-dabbrev-code) company-capf company-files)))
+       '((php-extras-company company-dabbrev-code company-ac-php-backend) company-capf company-files))
+  (ede-php-autoload-mode))  ; <3
 
 (add-hook 'php-mode-hook 'php-mode-setup t)
 

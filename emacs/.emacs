@@ -1,6 +1,7 @@
 (require 'package)
 
 (add-to-list 'package-archives (cons "melpa" "https://melpa.org/packages/") t)
+(add-to-list 'package-archives (cons "marmalade" "https://marmalade-repo.org/packages/"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -12,7 +13,7 @@
     ("e0c66085db350558f90f676e5a51c825cb1e0622020eeda6c573b07cb8d44be5" default)))
  '(package-selected-packages
    (quote
-    (company-php ac-php php-mode neotree pdf-tools racket-mode omnisharp csharp-mode company))))
+    (php-extras ede-php-autoload company-php ac-php php-mode neotree pdf-tools racket-mode omnisharp csharp-mode company))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -27,6 +28,7 @@
 (setq indent-tabs-mode nil)  ; set tabs to 4 spaces globally
 (setq tab-width 4)
 (setq company-idle-delay 0.01)  ; gotta go fast
+(setq company-minimum-prefix-length 0)
 
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
@@ -85,7 +87,16 @@
   (flycheck-mode 1)
   (company-mode t)
   (ac-php-core-eldoc-setup)
-  (make-local-variable 'company-backends)
-  (add-to-list 'company-backends 'company-ac-php-backend))
+  (ede-php-autoload-mode)  ; <3
+  (set (make-local-variable 'company-backends)
+       '((php-extras-company company-dabbrev-code) company-capf company-files)))
 
 (add-hook 'php-mode-hook 'php-mode-setup t)
+
+
+;;; Emacs Lisp
+
+(defun emacs-lisp-mode-setup ()
+  (company-mode t))
+
+(add-hook 'emacs-lisp-mode-hook 'emacs-lisp-mode-setup)

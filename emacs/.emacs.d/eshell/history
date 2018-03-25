@@ -1,0 +1,20 @@
+cd
+cd studia/semestr_2_lato_2017_18/
+ls
+gs
+git pull
+ls
+cd progob/lista04/
+ls
+Contextfreegrammars
+Contextfreegrammars/
+cd Contextfreegrammars
+cd ContextFreeGrammars
+ks
+ls
+emacs.
+emacs .
+git status
+git diff -w 
+git diff -w
+git reset --hard HEAD

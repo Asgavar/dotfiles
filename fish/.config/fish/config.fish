@@ -16,7 +16,7 @@ alias off "sudo poweroff"
 alias swm "sudo wifi-menu"
 
 alias gs "git status"
-alias gl "git log"
+alias gl "git log --graph --oneline"
 alias ga "git add ."
 alias gc "git commit"
 alias gp "git push"

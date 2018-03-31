@@ -9,5 +9,4 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 
 python -m pywal -R
 
-/usr/local/bin/polybar papiesz
-/usr/bin/polybar papiesz
+polybar papiesz

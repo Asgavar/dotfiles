@@ -1,0 +1,5 @@
+[user]
+	email = artur@juraszek.xyz
+	name = Artur Juraszek
+[commit]
+	gpgsign = true

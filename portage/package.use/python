@@ -1,0 +1,17 @@
+# required by dev-python/sqlalchemy-1.1.12::gentoo[python_targets_python3_4]
+# required by dev-python/sphinxcontrib-websupport-1.0.1-r1::gentoo
+# required by dev-python/sphinx-1.6.3-r3::gentoo[-test]
+# required by dev-python/sphinx (argument)
+>=dev-lang/python-3.4.5-r1:3.4 sqlite
+# required by dev-python/sqlalchemy-1.1.12::gentoo[python_targets_python3_5]
+# required by dev-python/sphinxcontrib-websupport-1.0.1-r1::gentoo
+# required by dev-python/sphinx-1.6.3-r3::gentoo[-test]
+# required by dev-python/sphinx (argument)
+>=dev-lang/python-3.5.4-r1:3.5 sqlite
+# required by dev-python/sqlalchemy-1.1.12::gentoo[python_targets_python3_6]
+# required by dev-python/sphinxcontrib-websupport-1.0.1-r1::gentoo
+# required by dev-python/sphinx-1.6.3-r3::gentoo[-test]
+# required by dev-python/sphinx (argument)
+>=dev-lang/python-3.6.3-r1 sqlite
+
+dev-lang/python -gdbm

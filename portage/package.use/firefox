@@ -1,0 +1,16 @@
+# required by www-client/firefox-45.8.0::gentoo
+# required by www-client/firefox (argument)
+>=dev-lang/python-2.7.12:2.7 sqlite
+
+# required by media-sound/pulseaudio-10.0::gentoo[alsa,alsa-plugin]
+# required by www-client/firefox-bin-52.2.0::gentoo[pulseaudio]
+# required by www-client/firefox-bin (argument)
+# >=media-plugins/alsa-plugins-1.1.1-r1 pulseaudio
+# ^ dzwiek nie dzialal
+>=www-client/firefox-bin-52.2.0 pulseaudio
+
+# required by media-sound/pulseaudio-11.1::gentoo[alsa,alsa-plugin]
+# required by www-client/firefox-bin-58.0.1::gentoo[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=media-plugins/alsa-plugins-1.1.1-r1 pulseaudio

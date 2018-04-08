@@ -1,0 +1,10 @@
+# required by dev-libs/wlc-0.0.9::gentoo
+# required by dev-libs/sway-0.13.0::gentoo
+# required by dev-libs/sway (argument)
+>=media-libs/mesa-13.0.5 wayland gles2
+# required by media-libs/mesa-13.0.5::gentoo[wayland]
+# required by dev-libs/wlc-0.0.9::gentoo
+# required by dev-libs/sway-0.13.0::gentoo
+# required by dev-libs/sway (argument)
+>=dev-libs/wayland-1.12.0 abi_x86_32
+dev-libs/sway wallpapers

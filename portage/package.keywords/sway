@@ -1,0 +1,6 @@
+# required by dev-libs/sway-0.13.0::gentoo
+# required by dev-libs/sway (argument)
+>=dev-libs/wlc-0.0.9 ~amd64
+# required by dev-libs/sway (argument)
+>=dev-libs/sway-0.13.0 ~amd64
+

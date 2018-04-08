@@ -1,0 +1,4 @@
+# required by www-misc/monitorix-3.9.0::gentoo
+# required by www-misc/monitorix (argument)
+>=net-analyzer/rrdtool-1.5.5 perl graph
+>=www-misc/monitorix-3.9.0 lm_sensors

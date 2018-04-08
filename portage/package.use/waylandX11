@@ -1,0 +1,2 @@
+dev-libs/wlc xwayland
+x11-base/xorg-server wayland

@@ -1,0 +1,3 @@
+# required by net-misc/megatools (argument)
+=net-misc/megatools-1.9.98 ~amd64
+

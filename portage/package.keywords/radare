@@ -1,0 +1,8 @@
+# required by dev-util/radare2-1.4.0-r1::gentoo[system-capstone]
+# required by dev-util/radare2 (argument)
+=dev-libs/capstone-3.0.5_rc2-r1 ~amd64
+# required by dev-util/radare2 (argument)
+=dev-util/radare2-1.4.0-r1 ~amd64
+# required by @selected
+# required by @world (argument)
+=dev-util/radare2-2.2.0 ~amd64

@@ -1,0 +1,2 @@
+# required by sys-power/thermald (argument)
+      =sys-power/thermald-1.6 ~amd64

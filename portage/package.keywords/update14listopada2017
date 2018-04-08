@@ -1,0 +1,14 @@
+# required by net-wireless/bluez-5.47-r1::gentoo
+# required by net-misc/networkmanager-1.8.4::gentoo[bluetooth]
+# required by @selected
+# required by @world (argument)
+=dev-libs/json-c-0.12.1 ~amd64
+
+# required by dev-python/pyopenssl-17.2.0::gentoo[python_targets_python3_6]
+# required by dev-python/urllib3-1.22::gentoo
+# required by dev-python/requests-2.18.2-r1::gentoo
+# required by dev-python/ssl-fetch-0.4::gentoo
+# required by app-portage/layman-2.4.2::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-lang/python-3.6.3-r1 ~amd64

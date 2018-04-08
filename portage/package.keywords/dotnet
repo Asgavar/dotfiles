@@ -1,0 +1,8 @@
+# required by dev-dotnet/dotnetcore-sdk-bin-2.1.3::dotnet
+# required by dev-dotnet/dotnetcore-sdk-bin (argument)
+>=dev-util/lldb-5.0.1 ~amd64
+# required by dev-dotnet/dotnetcore-sdk-bin-2.1.3::dotnet
+# required by dev-dotnet/dotnetcore-sdk-bin (argument)
+>=dev-util/lttng-ust-2.8.1 ~amd64
+# required by dev-dotnet/dotnetcore-sdk-bin (argument)
+>=dev-dotnet/dotnetcore-sdk-bin-2.1.3 ~amd64

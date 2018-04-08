@@ -1,0 +1,38 @@
+# required by sys-devel/clang-3.9.1-r100::gentoo
+# required by @selected
+# required by @world (argument)
+>=sys-devel/llvm-3.9.1-r1 clang
+# required by dev-qt/qtcore-5.6.2-r1::gentoo
+# required by net-p2p/qbittorrent-3.3.10::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-libs/libpcre-8.40-r1 pcre16
+# required by dev-libs/nettle-3.3-r1::gentoo[gmp]
+# required by net-libs/gnutls-3.3.26::gentoo
+# required by @__auto_slot_operator_replace_installed__ (argument)
+>=dev-libs/gmp-6.1.0 abi_x86_32
+# required by net-p2p/qbittorrent-3.3.10::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-qt/qtsingleapplication-2.6.1_p20150629 qt5
+# required by sys-devel/llvm-3.9.1-r1::gentoo[xml,clang]
+# required by sys-devel/clang-3.9.1-r100::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-libs/libxml2-2.9.4-r1 abi_x86_32
+# required by dev-libs/libxml2-2.9.4-r1::gentoo[icu]
+# required by sys-devel/llvm-3.9.1-r1::gentoo[xml,clang]
+# required by sys-devel/clang-3.9.1-r100::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-libs/icu-58.1-r1 abi_x86_32
+# required by dev-qt/qtsingleapplication-2.6.1_p20150629::gentoo
+# required by net-p2p/qbittorrent-3.3.10::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-qt/qtlockedfile-2.4.1_p20150629 qt5
+# required by media-libs/mesa-13.0.5::gentoo[nettle]
+# required by x11-base/xorg-server-1.19.2::gentoo[glamor]
+# required by x11-drivers/xf86-input-evdev-2.10.5::gentoo
+# required by x11-base/xorg-drivers-1.19::gentoo[input_devices_evdev]
+>=dev-libs/nettle-3.3-r1 abi_x86_32

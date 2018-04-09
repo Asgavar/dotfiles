@@ -15,6 +15,7 @@ alias usbtether "/home/asgavar/dotfiles/things_void/usb_tether.sh"
 alias dropbox "python2 /home/asgavar/dropbox.py"
 alias off "sudo poweroff"
 alias swm "sudo wifi-menu"
+alias r "ranger"
 
 alias gs "git status"
 alias gl "git log --graph --oneline"

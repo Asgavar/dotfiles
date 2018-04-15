@@ -1,0 +1,16 @@
+>=dev-lang/ruby-2.5.1 ~amd64
+>=app-eselect/eselect-ruby-20171225 ~amd64
+dev-ruby/net-telnet ~amd64
+>=dev-ruby/rdoc-6.0.1 ~amd64
+>=dev-ruby/json-2.1.0 ~amd64
+>=dev-ruby/power_assert-1.1.1 ~amd64
+>=dev-ruby/xmlrpc-0.3.0 ~amd64
+>=dev-ruby/minitest-5.11.3 ~amd64
+>=dev-ruby/test-unit-3.2.7 ~amd64
+#>=dev-lang/ruby-2.4.4 ~amd64
+>=dev-ruby/rake-12.3.1 ~amd64
+>=dev-ruby/did_you_mean-1.2.1 ~amd64
+>dev-ruby/racc-1.4.10 ~amd64
+=virtual/rubygems-14 ~amd64
+>=dev-ruby/kpeg-1.1.0 ~amd64
+>=dev-ruby/rubygems-2.7.3 ~amd64	

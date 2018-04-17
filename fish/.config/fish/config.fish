@@ -24,5 +24,13 @@ alias gc "git commit"
 alias gp "git push"
 alias gdw "git diff -w"
 
-function fish_title;end
+# emacs ansi-term support
+if test -n "$EMACS"
+  set -x TERM eterm-color
+end
+
+function fish_title
+  true
+end
+
 clear

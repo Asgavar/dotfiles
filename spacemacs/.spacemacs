@@ -282,7 +282,7 @@ values."
    dotspacemacs-highlight-delimiters 'all
    ;; If non nil, advise quit functions to keep server open when quitting.
    ;; (default nil)
-   dotspacemacs-persistent-server nil
+   dotspacemacs-persistent-server t
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
    ;; (default '("ag" "pt" "ack" "grep"))
@@ -330,23 +330,13 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#1F1611" "#660000" "#144212" "#EFC232" "#5798AE" "#BE73FD" "#93C1BC" "#E6E1DC"])
- '(ansi-term-color-vector
-   [unspecified "#1F1611" "#660000" "#144212" "#EFC232" "#5798AE" "#BE73FD" "#93C1BC" "#E6E1DC"] t)
- '(custom-safe-themes
-   (quote
-    ("44eec3c3e6e673c0d41b523a67b64c43b6e38f8879a7969f306604dcf908832c" default)))
- '(evil-want-Y-yank-to-eol nil)
- '(fci-rule-character-color "#452E2E")
- '(fci-rule-color "#452E2E" t)
  '(package-selected-packages
    (quote
-    (yasnippet-snippets symon string-inflection spaceline-all-the-icons all-the-icons memoize ruby-refactor ruby-hash-syntax pippel pipenv password-generator overseer nameless mvn meghanada maven-test-mode importmagic epc ctable concurrent deferred helm-xref helm-purpose window-purpose imenu-list groovy-mode groovy-imports pcache gradle-mode let-alist evil-lion evil-cleverparens paredit ensime sbt-mode scala-mode editorconfig counsel-projectile counsel swiper ivy ac-php-core xcscope centered-cursor-mode browse-at-remote birds-of-paradise-plus-theme badwolf-theme font-lock+ flymake-php company-php ac-php helm-gtags composer omnisharp shut-up csharp-mode multi xkcd enh-ruby-mode bundler rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby inf-ruby git-gutter-fringe evil-magit smeargle orgit magit-gitflow magit helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ fringe-helper git-gutter+ git-gutter magit-popup git-commit ghub with-editor diff-hl xterm-color shell-pop multi-term flycheck-pos-tip flycheck eshell-z eshell-prompt-extras esh-help company-quickhelp pos-tip phpunit phpcbf php-extras php-auto-yasnippets drupal-mode php-mode pdf-tools tablist company-emacs-eclim eclim racket-mode faceup yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc helm-company helm-c-yasnippet fuzzy cython-mode company-statistics company-anaconda company auto-yasnippet yasnippet anaconda-mode pythonic ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+    (omnisharp shut-up csharp-mode yasnippet-snippets yapfify xterm-color xkcd ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org symon string-inflection spaceline-all-the-icons smeargle shell-pop rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe restart-emacs rbenv rake rainbow-delimiters racket-mode pyvenv pytest pyenv-mode py-isort popwin pippel pipenv pip-requirements phpunit phpcbf php-extras php-auto-yasnippets persp-mode pdf-tools password-generator paradox overseer org-plus-contrib org-bullets open-junk-file neotree nameless mvn multi-term move-text minitest meghanada maven-test-mode magit-gitflow macrostep lorem-ipsum live-py-mode linum-relative link-hint indent-guide importmagic hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag groovy-mode groovy-imports gradle-mode google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ fuzzy font-lock+ flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help ensime enh-ruby-mode elisp-slime-nav editorconfig dumb-jump drupal-mode diminish diff-hl define-word cython-mode counsel-projectile company-statistics company-quickhelp company-php company-emacs-eclim company-anaconda column-enforce-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote birds-of-paradise-plus-theme badwolf-theme auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Input Mono" :foundry "FBI " :slant normal :weight normal :height 113 :width normal)))))
+ )
 )

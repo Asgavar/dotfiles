@@ -7,7 +7,6 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-#font = Lemon
 font = InputMono Medium
 scrollback_lines = 10000
 search_wrap = true
@@ -18,7 +17,7 @@ search_wrap = true
 cursor_blink = system
 
 # "block", "underline" or "ibeam"
-cursor_shape = block
+cursor_shape = underline
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
 #browser = xdg-open
@@ -33,17 +32,10 @@ filter_unmatched_urls = true
 #modify_other_keys = false
 
 [colors]
-#cursor = #dcdccc
-#cursor_foreground = #dcdccc
 foreground = #dcdccc
 foreground_bold = #ffffff
-#background = #34495e
 
-# 20% background transparency (requires a compositor)
-#background = rgba(52, 73, 94, 0.8)
 background = rgba(40, 26, 35, 0.8)
-#background = #212121
-#background = rgba(139, 110, 40, 0.8)
 
 # if unset, will reverse foreground and background
 highlight = #2f2f2f

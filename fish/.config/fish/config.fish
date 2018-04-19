@@ -5,6 +5,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export XKB_DEFAULT_LAYOUT=pl
 export XKB_DEFAULT_OPTIONS=caps:swapescape
 export XDG_RUNTIME_DIR=/home/asgavar/.xdg
+export EDITOR="emacsclient -t"
+export VISUAL="emacsclient -c"
 
 set -gx PATH /usr/local/bin $PATH
 
@@ -23,6 +25,9 @@ alias ga "git add ."
 alias gc "git commit"
 alias gp "git push"
 alias gdw "git diff -w"
+
+alias emax "emacsclient -c"
+alias temacs "emacsclient -t"
 
 # emacs ansi-term support
 if test -n "$EMACS"

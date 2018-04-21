@@ -36,7 +36,7 @@ values."
                         auto-completion-enable-help-tooltip t)
      ;; better-defaults
      git
-     gtags
+     ;; gtags
      ;; markdown
      ;; org
      (shell :variables
@@ -110,6 +110,8 @@ values."
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
    dotspacemacs-editing-style 'vim
+   ;; Czepiał się w automatycznych testach
+   dotspacemacs-mode-line-theme 'spacemacs
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official', it displays
@@ -320,7 +322,10 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq eclim-eclipse-dirs "/opt/eclipse"
-        eclim-executable "/opt/eclipse/eclim"))
+        eclim-executable "/opt/eclipse/eclim")
+  ;; Racket
+  (add-hook 'racket-mode-hook #'(lambda () (turn-off-smartparens-mode)))
+  (add-hook 'racket-repl-mode-hook #'(lambda () (turn-off-smartparens-mode))))
 
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.

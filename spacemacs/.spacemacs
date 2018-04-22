@@ -321,8 +321,12 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;; Java
   (setq eclim-eclipse-dirs "/opt/eclipse"
-        eclim-executable "/opt/eclipse/eclim")
+        eclim-executable "/opt/eclipse/eclim"
+        eclimd-autostart t)
+  (add-hook 'java-mode-hook #'(lambda () (eclim-mode t)))
+  (add-hook 'java-mode-hook #'(lambda () (company-emacs-eclim-setup)))
   ;; Racket
   (add-hook 'racket-mode-hook #'(lambda () (turn-off-smartparens-mode)))
   (add-hook 'racket-repl-mode-hook #'(lambda () (turn-off-smartparens-mode))))

@@ -269,7 +269,8 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers '(:disabled-for-modes pdf-view-mode
+                                                   dired-mode)
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -324,9 +325,11 @@ you should place your code here."
   ;; Java
   (setq eclim-eclipse-dirs "/opt/eclipse"
         eclim-executable "/opt/eclipse/eclim"
-        eclimd-autostart t)
+        eclimd-autostart t
+        meghanada-auto-start nil)
   (add-hook 'java-mode-hook #'(lambda () (eclim-mode t)))
   (add-hook 'java-mode-hook #'(lambda () (company-emacs-eclim-setup)))
+  (add-hook 'java-mode-hook #'(lambda () (setq c-basic-offset 2)))
   ;; Racket
   (add-hook 'racket-mode-hook #'(lambda () (turn-off-smartparens-mode)))
   (add-hook 'racket-repl-mode-hook #'(lambda () (turn-off-smartparens-mode))))

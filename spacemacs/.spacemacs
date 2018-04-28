@@ -332,7 +332,9 @@ you should place your code here."
   (add-hook 'java-mode-hook #'(lambda () (setq c-basic-offset 2)))
   ;; Racket
   (add-hook 'racket-mode-hook #'(lambda () (turn-off-smartparens-mode)))
-  (add-hook 'racket-repl-mode-hook #'(lambda () (turn-off-smartparens-mode))))
+  (add-hook 'racket-repl-mode-hook #'(lambda () (turn-off-smartparens-mode)))
+  ;; PHP
+  (add-hook 'php-mode-hook #'(lambda () (add-hook 'after-save-hook (lambda () (ac-php-remake-tags-all)) t t))))
 
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.

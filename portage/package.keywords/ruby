@@ -14,3 +14,4 @@ dev-ruby/net-telnet ~amd64
 =virtual/rubygems-14 ~amd64
 >=dev-ruby/kpeg-1.1.0 ~amd64
 >=dev-ruby/rubygems-2.7.3 ~amd64	
+>=virtual/ruby-ssl-8 ~amd64

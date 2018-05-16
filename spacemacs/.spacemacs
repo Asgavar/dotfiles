@@ -334,6 +334,10 @@ you should place your code here."
   (add-hook 'java-mode-hook #'(lambda () (eclim-mode t)))
   (add-hook 'java-mode-hook #'(lambda () (company-emacs-eclim-setup)))
   (add-hook 'java-mode-hook #'(lambda () (setq c-basic-offset 2)))
+  (add-hook 'java-mode-hook #'(lambda () (add-hook 'before-save-hook
+                                                   #'(lambda () (untabify (point-min)
+                                                                          (point-max)))
+                                                   nil t)))
   ;; Racket
   (add-hook 'racket-mode-hook #'(lambda () (turn-off-smartparens-mode)))
   (add-hook 'racket-repl-mode-hook #'(lambda () (turn-off-smartparens-mode)))

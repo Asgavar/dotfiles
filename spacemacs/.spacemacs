@@ -381,7 +381,9 @@ you should place your code here."
   (add-hook 'racket-mode-hook #'(lambda () (turn-off-smartparens-mode)))
   (add-hook 'racket-repl-mode-hook #'(lambda () (turn-off-smartparens-mode)))
   ;; PHP
-  (add-hook 'php-mode-hook #'(lambda () (add-hook 'after-save-hook (lambda () (ac-php-remake-tags-all)) t t))))
+  (add-hook 'php-mode-hook #'(lambda () (add-hook 'after-save-hook (lambda () (ac-php-remake-tags-all)) t t)))
+  ;; Python
+  (add-hook 'python-mode-hook #'(lambda () (setq company-backends '(company-anaconda)))))
 
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.

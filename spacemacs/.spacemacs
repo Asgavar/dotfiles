@@ -53,6 +53,7 @@ This function should only modify configuration layer settings."
      javascript
      php
      (ruby :variables ruby-enable-enh-ruby-mode t)
+     yaml
      html
      emacs-lisp
      vinegar
@@ -350,7 +351,7 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  (setq-default dotspacemacs-themes '(gruvbox badwolf birds-of-paradise-plus))
+  (setq-default dotspacemacs-themes '(gruvbox-dark-hard badwolf birds-of-paradise-plus))
   (setq explicit-shell-file-name "/bin/bash")
   (setq shell-file-name "/bin/bash"))
 
@@ -383,7 +384,8 @@ you should place your code here."
   ;; PHP
   (add-hook 'php-mode-hook #'(lambda () (add-hook 'after-save-hook (lambda () (ac-php-remake-tags-all)) t t)))
   ;; Python
-  (add-hook 'python-mode-hook #'(lambda () (setq company-backends '(company-anaconda)))))
+  (add-hook 'python-mode-hook #'(lambda () (setq company-backends '(company-anaconda))))
+  (add-hook 'python-mode-hook #'(lambda () (local-set-key (kbd "<f5>") 'spacemacs/python-execute-file-focus))))
 
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
@@ -398,7 +400,7 @@ This function is called at the very end of Spacemacs initialization."
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (sublime-themes web-mode tagedit slim-mode scss-mode sass-mode pug-mode impatient-mode htmlize helm-css-scss haml-mode emmet-mode company-web web-completion-data mmm-mode markdown-toc markdown-mode gh-md yasnippet-snippets yapfify xterm-color xkcd ws-butler winum which-key web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package toc-org symon string-inflection spaceline-all-the-icons smeargle shell-pop rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe restart-emacs rbenv rake rainbow-delimiters racket-mode pyvenv pytest pyenv-mode py-isort popwin pippel pipenv pip-requirements phpunit phpcbf php-extras php-auto-yasnippets persp-mode pdf-tools password-generator paradox overseer org-plus-contrib org-bullets open-junk-file omnisharp neotree nameless mvn multi-term move-text minitest meghanada maven-test-mode magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint json-mode js2-refactor js-doc indent-guide importmagic hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag gruvbox-theme groovy-mode groovy-imports gradle-mode google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ fuzzy font-lock+ flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help ensime enh-ruby-mode elisp-slime-nav editorconfig dumb-jump drupal-mode diminish diff-hl define-word cython-mode counsel-projectile company-tern company-statistics company-quickhelp company-php company-emacs-eclim company-anaconda column-enforce-mode coffee-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote birds-of-paradise-plus-theme badwolf-theme auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+    (yaml-mode sublime-themes web-mode tagedit slim-mode scss-mode sass-mode pug-mode impatient-mode htmlize helm-css-scss haml-mode emmet-mode company-web web-completion-data mmm-mode markdown-toc markdown-mode gh-md yasnippet-snippets yapfify xterm-color xkcd ws-butler winum which-key web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package toc-org symon string-inflection spaceline-all-the-icons smeargle shell-pop rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe restart-emacs rbenv rake rainbow-delimiters racket-mode pyvenv pytest pyenv-mode py-isort popwin pippel pipenv pip-requirements phpunit phpcbf php-extras php-auto-yasnippets persp-mode pdf-tools password-generator paradox overseer org-plus-contrib org-bullets open-junk-file omnisharp neotree nameless mvn multi-term move-text minitest meghanada maven-test-mode magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint json-mode js2-refactor js-doc indent-guide importmagic hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag gruvbox-theme groovy-mode groovy-imports gradle-mode google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ fuzzy font-lock+ flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help ensime enh-ruby-mode elisp-slime-nav editorconfig dumb-jump drupal-mode diminish diff-hl define-word cython-mode counsel-projectile company-tern company-statistics company-quickhelp company-php company-emacs-eclim company-anaconda column-enforce-mode coffee-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote birds-of-paradise-plus-theme badwolf-theme auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

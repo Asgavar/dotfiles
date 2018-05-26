@@ -1,3 +1,3 @@
 # required by dev-php/composer-1.6.3::gentoo
 # required by dev-php/composer (argument)
->=dev-lang/php-7.1.13 curl cjk gd xmlreader xmlwriter
+>=dev-lang/php-7.1.13 curl cjk gd xmlreader xmlwriter pdo

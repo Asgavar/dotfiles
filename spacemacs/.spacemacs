@@ -371,21 +371,21 @@ you should place your code here."
         eclim-executable "/opt/eclipse/eclim"
         eclimd-autostart t
         meghanada-auto-start nil)
-  (add-hook 'java-mode-hook #'(lambda () (eclim-mode t)))
-  (add-hook 'java-mode-hook #'(lambda () (company-emacs-eclim-setup)))
-  (add-hook 'java-mode-hook #'(lambda () (setq c-basic-offset 2)))
-  (add-hook 'java-mode-hook #'(lambda () (add-hook 'before-save-hook
-                                                   #'(lambda () (untabify (point-min)
-                                                                          (point-max)))
-                                                   nil t)))
+  (add-hook 'java-mode-hook (lambda () (eclim-mode t)))
+  (add-hook 'java-mode-hook (lambda () (company-emacs-eclim-setup)))
+  (add-hook 'java-mode-hook (lambda () (setq c-basic-offset 2)))
+  (add-hook 'java-mode-hook (lambda () (add-hook 'before-save-hook
+                                                 (lambda () (untabify (point-min)
+                                                                      (point-max)))
+                                                 nil t)))
   ;; Racket
-  (add-hook 'racket-mode-hook #'(lambda () (turn-off-smartparens-mode)))
-  (add-hook 'racket-repl-mode-hook #'(lambda () (turn-off-smartparens-mode)))
+  (add-hook 'racket-mode-hook (lambda () (turn-off-smartparens-mode)))
+  (add-hook 'racket-repl-mode-hook (lambda () (turn-off-smartparens-mode)))
   ;; PHP
-  (add-hook 'php-mode-hook #'(lambda () (add-hook 'after-save-hook (lambda () (ac-php-remake-tags-all)) t t)))
+  (add-hook 'php-mode-hook (lambda () (add-hook 'after-save-hook (lambda () (ac-php-remake-tags-all)) t t)))
   ;; Python
-  (add-hook 'python-mode-hook #'(lambda () (setq company-backends '(company-anaconda))))
-  (add-hook 'python-mode-hook #'(lambda () (local-set-key (kbd "<f5>") 'spacemacs/python-execute-file-focus))))
+  (add-hook 'python-mode-hook (lambda () (setq company-backends '(company-anaconda))))
+  (add-hook 'python-mode-hook (lambda () (local-set-key (kbd "<f5>") 'spacemacs/python-execute-file-focus))))
 
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
@@ -397,10 +397,9 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (yaml-mode sublime-themes web-mode tagedit slim-mode scss-mode sass-mode pug-mode impatient-mode htmlize helm-css-scss haml-mode emmet-mode company-web web-completion-data mmm-mode markdown-toc markdown-mode gh-md yasnippet-snippets yapfify xterm-color xkcd ws-butler winum which-key web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package toc-org symon string-inflection spaceline-all-the-icons smeargle shell-pop rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe restart-emacs rbenv rake rainbow-delimiters racket-mode pyvenv pytest pyenv-mode py-isort popwin pippel pipenv pip-requirements phpunit phpcbf php-extras php-auto-yasnippets persp-mode pdf-tools password-generator paradox overseer org-plus-contrib org-bullets open-junk-file omnisharp neotree nameless mvn multi-term move-text minitest meghanada maven-test-mode magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint json-mode js2-refactor js-doc indent-guide importmagic hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag gruvbox-theme groovy-mode groovy-imports gradle-mode google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ fuzzy font-lock+ flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help ensime enh-ruby-mode elisp-slime-nav editorconfig dumb-jump drupal-mode diminish diff-hl define-word cython-mode counsel-projectile company-tern company-statistics company-quickhelp company-php company-emacs-eclim company-anaconda column-enforce-mode coffee-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote birds-of-paradise-plus-theme badwolf-theme auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+    (yasnippet-snippets web-mode string-inflection pyvenv pug-mode phpcbf persp-mode pdf-tools meghanada link-hint js2-refactor importmagic hy-mode hl-todo helm-xref helm-projectile helm-descbinds gruvbox-theme git-link eyebrowse evil-matchit evil-magit eval-sexp-fu editorconfig dumb-jump define-word counsel-projectile counsel ivy company-quickhelp company-php ac-php-core xcscope company-anaconda auto-yasnippet anaconda-mode avy sbt-mode smartparens company projectile window-purpose helm helm-core magit magit-popup markdown-mode flycheck yasnippet php-mode pythonic inf-ruby js2-mode spaceline which-key org-plus-contrib evil async hydra bind-key yapfify yaml-mode xterm-color xkcd ws-butler winum web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package undo-tree toc-org tagedit tablist symon swiper spaceline-all-the-icons smeargle slim-mode shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe restart-emacs rbenv rake rainbow-delimiters racket-mode pytest pyenv-mode py-isort powerline popwin pippel pipenv pip-requirements phpunit php-extras php-auto-yasnippets password-generator paradox overseer org-bullets open-junk-file omnisharp neotree nameless mvn multiple-cursors multi-term move-text mmm-mode minitest maven-test-mode markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative json-navigator json-mode js-doc indent-guide impatient-mode imenu-list hungry-delete highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-purpose helm-mode-manager helm-make helm-gitignore helm-flx helm-css-scss helm-company helm-c-yasnippet helm-ag groovy-mode groovy-imports gradle-mode goto-chg google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ ghub gh-md fuzzy font-lock+ flycheck-pos-tip flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eshell-z eshell-prompt-extras esh-help epc ensime enh-ruby-mode emmet-mode elisp-slime-nav drupal-mode diminish diff-hl cython-mode company-web company-tern company-statistics company-emacs-eclim column-enforce-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote birds-of-paradise-plus-theme badwolf-theme autothemer auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

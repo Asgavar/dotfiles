@@ -8,7 +8,7 @@ export XDG_RUNTIME_DIR=/home/asgavar/.xdg
 export EDITOR="emacsclient -t"
 export VISUAL="emacsclient -c"
 
-set -gx PATH /usr/local/bin ~/.gem/ruby/*/bin $PATH
+set -gx PATH /usr/local/bin ~/.gem/ruby/*/bin ~/.local/bin $PATH
 
 setxkbmap -option "caps:swapescape"
 setxkbmap pl

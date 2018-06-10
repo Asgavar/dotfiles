@@ -45,7 +45,8 @@ This function should only modify configuration layer settings."
              shell-default-height 30
              shell-default-position 'bottom
              shell-default-full-span nil
-             shell-default-term-shell "/bin/bash")
+             shell-default-term-shell "/bin/bash"
+             shell-default-shell 'eshell)
      ;; spell-checking
      syntax-checking
      version-control

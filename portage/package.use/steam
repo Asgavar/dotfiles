@@ -220,7 +220,8 @@
 # # required by games-util/steam-client-meta-0-r20160828::steam-overlay
 # # required by games-util/steam-meta-0-r20160817::steam-overlay
 # # required by games-util/steam-meta (argument)
->=x11-proto/xcb-proto-1.12-r2 abi_x86_32
+# move x11-proto/xcb-proto x11-base/xcb-proto
+>=x11-base/xcb-proto-1.12-r2 abi_x86_32
 # # required by media-libs/mesa-12.0.1::gentoo
 # # required by virtual/opengl-7.0-r1::gentoo
 # # required by games-util/steam-client-meta-0-r20160828::steam-overlay

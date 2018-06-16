@@ -1,0 +1,2 @@
+dev-db/redis ~amd64
+dev-php/pecl-redis ~amd64

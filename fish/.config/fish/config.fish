@@ -19,6 +19,7 @@ alias off "sudo poweroff"
 alias swm "sudo wifi-menu"
 alias r "ranger"
 alias s "startx /usr/bin/i3"
+alias pp "polybar papiesz"
 
 alias gs "git status"
 alias gl "git log --graph --oneline"

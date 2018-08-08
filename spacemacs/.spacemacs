@@ -43,7 +43,7 @@ This function should only modify configuration layer settings."
             shell-default-position 'bottom
             shell-default-full-span nil
             shell-default-term-shell "/bin/bash"
-            shell-default-shell 'eshell)
+            shell-default-shell 'multiterm)
      ansible
      docker
      emacs-lisp

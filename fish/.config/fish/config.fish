@@ -7,6 +7,7 @@ export XKB_DEFAULT_OPTIONS=caps:swapescape
 export XDG_RUNTIME_DIR=/home/asgavar/.xdg
 export EDITOR="emacsclient -t"
 export VISUAL="emacsclient -c"
+export TERM=xterm
 
 set -gx PATH /usr/local/bin ~/.gem/ruby/*/bin ~/.local/bin /opt/bin $PATH
 

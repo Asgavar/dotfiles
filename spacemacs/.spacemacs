@@ -459,7 +459,6 @@ you should place your code here."
   (add-hook 'php-mode-hook (lambda () (add-hook 'after-save-hook (lambda () (ac-php-remake-tags-all)) t t)))
   ;; Python
   (add-hook 'python-mode-hook (lambda () (setq company-backends '(company-anaconda))))
-  (add-hook 'python-mode-hook (lambda () (local-set-key (kbd "<f5>") 'spacemacs/python-execute-file-focus)))
   (add-hook 'python-mode-hook (lambda () (turn-off-smartparens-mode)))
   ;; Opera mgr templates
   (add-to-list 'auto-mode-alist '("\\.tpl$" . jinja2-mode)))

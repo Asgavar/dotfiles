@@ -8,6 +8,10 @@ export XDG_RUNTIME_DIR=/home/asgavar/.xdg
 export EDITOR="emacsclient -t"
 export VISUAL="emacsclient -c"
 export TERM=xterm
+export BROWSER=/usr/bin/opera
+export REQUESTS_CA_BUNDLE=/etc/ssl/certs
+
+export VAULT_ADDR=https://vault.mesos.services.ams.osa:8443
 
 set -gx PATH /usr/local/bin ~/.gem/ruby/*/bin ~/.local/bin /opt/bin $PATH
 

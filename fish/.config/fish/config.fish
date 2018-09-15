@@ -26,6 +26,7 @@ alias r "ranger"
 alias s "startx /usr/bin/i3"
 alias pp "polybar papiesz"
 
+alias magit='emacsclient -c -t -e \(magit-status\)'
 alias gs "git status"
 alias gl "git log --graph --oneline"
 alias ga "git add ."

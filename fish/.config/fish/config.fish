@@ -34,7 +34,7 @@ alias gc "git commit"
 alias gp "git push"
 alias gdw "git diff -w"
 
-alias emax "emacsclient -c"
+alias emax "emacsclient -c -n"
 alias temacs "emacsclient -t"
 
 # emacs ansi-term support

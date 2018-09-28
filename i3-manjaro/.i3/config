@@ -409,3 +409,4 @@ mode "$mode_gaps_outer" {
 }
 
 exec xrandr --output DP2 --auto --right-of DP1
+exec wal -i /home/asgavar/tapeta.jpg

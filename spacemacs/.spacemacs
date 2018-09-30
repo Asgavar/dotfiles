@@ -58,6 +58,7 @@ This function should only modify configuration layer settings."
      java
      javascript
      nginx
+     octave
      python
      php
      puppet

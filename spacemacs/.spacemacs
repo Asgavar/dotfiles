@@ -36,7 +36,6 @@ This function should only modify configuration layer settings."
    '(
      (auto-completion :variables
                         auto-completion-enable-help-tooltip t)
-     (colors :variables colors-colorize-identifiers 'variables)
      (markdown :variables markdown-command "pandoc")
      (mu4e :variables
            mu4e-installation-path "/usr/share/emacs/site-lisp/mu4e")

@@ -1,0 +1,5 @@
+sys-process/tini ~amd64
+app-emulation/docker ~amd64
+app-emulation/runc ~amd64
+app-emulation/docker-proxy ~amd64
+sys-apps/util-linux ~amd64

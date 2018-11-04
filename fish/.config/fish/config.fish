@@ -25,6 +25,7 @@ alias swm "sudo wifi-menu"
 alias r "ranger"
 alias s "startx /usr/bin/i3"
 alias pp "polybar papiesz"
+alias vpnopera "sudo openconnect --juniper vpn.opera.com --authgroup=OperaEmployeesOTP --user=ajuraszek"
 
 alias magit='emacsclient -c -t -e \(magit-status\)'
 alias gs "git status"

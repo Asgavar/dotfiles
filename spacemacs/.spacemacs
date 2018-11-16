@@ -352,7 +352,7 @@ It should only modify the values of Spacemacs settings."
    ;; (default nil)
    dotspacemacs-line-numbers '(:disabled-for-modes pdf-view-mode
                                                    dired-mode
-                               :force-enabled-for-modes tuareg-mode)
+                               :force-enabled-for-modes tuareg-mode json-mode)
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil

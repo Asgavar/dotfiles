@@ -9,4 +9,10 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 
 python -m pywal -R
 
-polybar papiesz
+if type "xrandr"; then
+    for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+        MONITOR=$m polybar --reload papiesz &
+    done
+else
+    polybar --reload papiesz &
+fi

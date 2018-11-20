@@ -170,6 +170,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+exec xrandr --output DP2 --auto --right-of DP1
 exec_always /home/asgavar/.config/polybar/launch.sh
 
 #bar {

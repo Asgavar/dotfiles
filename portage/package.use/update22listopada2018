@@ -1,0 +1,13 @@
+# required by media-libs/mesa-18.2.5::gentoo
+# required by x11-base/xorg-server-1.20.3::gentoo[glamor]
+# required by x11-drivers/xf86-video-ati-18.1.0::gentoo
+# required by x11-base/xorg-drivers-1.20::gentoo[video_cards_radeon]
+# required by x11-base/xorg-server-1.19.5-r2::gentoo[xorg]
+# required by @selected
+# required by @world (argument)
+>=x11-libs/libXrandr-1.5.1-r1 abi_x86_32
+# required by x11-libs/libXrandr-1.5.1-r1::gentoo
+# required by app-emulation/virtualbox-bin-5.2.22.126460::gentoo[-headless]
+# required by @selected
+# required by @world (argument)
+>=x11-libs/libXrender-0.9.10-r1 abi_x86_32

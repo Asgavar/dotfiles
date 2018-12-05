@@ -442,7 +442,7 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  (setq-default dotspacemacs-themes '(xresources birds-of-paradise-plus gruvbox-dark-hard arjen-grey solarized-light afternoon flatland zerodark badwolf))
+  (setq-default dotspacemacs-themes '(afternoon xresources birds-of-paradise-plus gruvbox-dark-hard arjen-grey solarized-light flatland zerodark badwolf))
   (setq explicit-shell-file-name "/bin/bash")
   (setq shell-file-name "/bin/bash"))
 

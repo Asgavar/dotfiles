@@ -13,7 +13,7 @@ export REQUESTS_CA_BUNDLE=/etc/ssl/certs
 
 export VAULT_ADDR=https://vault.mesos.services.ams.osa:8443
 
-set -gx PATH /usr/local/bin ~/.gem/ruby/*/bin ~/.local/bin /opt/bin ~/go/bin $PATH
+set -gx PATH /usr/local/bin ~/.gem/ruby/*/bin ~/.local/bin /opt/bin ~/go/bin ~/.stack/programs/x86_64-linux/*/bin $PATH
 
 setxkbmap -option "caps:swapescape"
 setxkbmap pl

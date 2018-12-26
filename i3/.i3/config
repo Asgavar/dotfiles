@@ -169,6 +169,12 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 bindsym $mod+0 exec blurlock
 
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+bindsym XF86AudioMute exec amixer set Master 0
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+
 exec xrandr --output DP2 --auto --right-of DP1
 exec_always /home/asgavar/.config/polybar/launch.sh
 

@@ -51,6 +51,9 @@ exec_always feh --bg-fill /home/asgavar/tapeta.jpg
     # helm-like window chooser
     bindsym $mod+i exec rofi -show window
 
+    # pass dmenu-like interface
+    bindsym $mod+o exec /home/asgavar/passmenu.sh
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.

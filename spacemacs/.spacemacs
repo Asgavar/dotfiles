@@ -460,6 +460,7 @@ you should place your code here."
   (global-set-key (kbd "<f5>") 'magit-status)
   (global-set-key (kbd "<f12>") 'lazy-helm/helm-mini)
   ;; Spotify controls
+  (spotify-enable-song-notifications)
   (global-set-key [(XF86AudioNext)] 'spotify-next)
   (global-set-key [(XF86AudioPrev)] 'spotify-previous)
   (global-set-key [(XF86AudioPlay)] 'spotify-playpause)

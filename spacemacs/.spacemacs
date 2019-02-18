@@ -58,7 +58,6 @@ This function should only modify configuration layer settings."
      html
      java
      javascript
-     julia
      nginx
      ocaml
      octave

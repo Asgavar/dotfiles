@@ -464,6 +464,10 @@ you should place your code here."
   (global-set-key [(XF86AudioNext)] 'spotify-next)
   (global-set-key [(XF86AudioPrev)] 'spotify-previous)
   (global-set-key [(XF86AudioPlay)] 'spotify-playpause)
+  ;; zoom in and out
+  (global-set-key (kbd "C-+") 'zoom-frm-in)
+  (global-set-key (kbd "C--") 'zoom-frm-out)
+  (global-set-key (kbd "C-0") 'zoom-frm-unzoom)
   (add-hook 'evil-insert-state-exit-hook
             (lambda () (when (buffer-file-name) (progn (save-buffer)))))
   ;; Java

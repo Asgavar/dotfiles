@@ -494,6 +494,8 @@ you should place your code here."
   (add-hook 'json-mode-hook (lambda () (setq js-indent-level 2)))
   ;; Opera mgr templates
   (add-to-list 'auto-mode-alist '("\\.tpl$" . jinja2-mode))
+  ;; Org
+  (add-hook 'org-mode-hook 'org-toggle-pretty-entities)
   (use-package forge)
   ;; Opera Web Services GitLab instance
   (add-to-list 'forge-alist '("gitlab.services.ams.osa" "gitlab.services.ams.osa/api/v4" "gitlab.services.ams.osa" forge-gitlab-repository))

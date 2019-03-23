@@ -458,6 +458,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (global-set-key (kbd "<f3>") 'evil-ex-nohighlight)
   (global-set-key (kbd "<f5>") 'magit-status)
+  (global-set-key (kbd "C-<f5>") 'magit-fastcommit)
   (global-set-key (kbd "<f12>") 'lazy-helm/helm-mini)
   ;; Spotify controls
   (spotify-enable-song-notifications)

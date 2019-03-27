@@ -356,7 +356,8 @@ It should only modify the values of Spacemacs settings."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers '(:disabled-for-modes pdf-view-mode
+   dotspacemacs-line-numbers '(:relative t
+                               :disabled-for-modes pdf-view-mode
                                                    dired-mode
                                :enabled-for-modes defaults
                                                   text-mode

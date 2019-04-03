@@ -1,10 +1,11 @@
 include "$HOME/.cache/wal/colors-sway"
 
 set $mod Mod4
-set $kolor #212121
-set $napisy #f5f5f5
+
+exec_always python -m pywal -i /home/asgavar/tapeta.jpg -e
 
 font pango:InputMono 10
+output * bg $wallpaper fill
 
 # ramka gora i dol titlebara | kolor paska | kolor napisu | kolor ramki z prawej | ramka
 # dookola
@@ -15,6 +16,7 @@ gaps inner 20
 gaps outer 0
 # gapsy tylko gdy okien jest > 1
 smart_gaps on
+smart_borders on
 
 # ladne okna
 new_window pixel 5
@@ -24,27 +26,8 @@ set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
+
 set $term termite
-# Your preferred application launcher
-#set $menu dmenu_run
-set $menu /home/asgavar/dmenu.sh
-
-# feh przestal byc potrzebny
-#output * bg /home/asgavar/tapeta.jpg fill
-output * bg $wallpaper fill
-
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 
 ### Key bindings
     # start a terminal
@@ -54,14 +37,23 @@ output * bg $wallpaper fill
     bindsym $mod+Shift+q kill
 
     # start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+d exec rofi -show drun
+
+    # take a screenshot
+    bindsym $mod+p exec scrot
+
+    # helm-like window chooser
+    bindsym $mod+i exec rofi -show window
+
+    # pass dmenu-like interface
+    bindsym $mod+o exec /home/asgavar/passmenu.sh
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
-    floating_modifier $mod normal
+    # floating_modifier $mod normal
 
     # reload the configuration file
     bindsym $mod+Shift+r reload
@@ -98,27 +90,25 @@ output * bg $wallpaper fill
 # Workspaces:
 #
     # switch to workspace
-    bindsym $mod+1 workspace "1: www"
-    bindsym $mod+2 workspace "2: kod"
-    bindsym $mod+3 workspace "3: konsola"
-    bindsym $mod+4 workspace "4: random I"
-    bindsym $mod+5 workspace "5: random II"
+    bindsym $mod+1 workspace 1
+    bindsym $mod+2 workspace 2
+    bindsym $mod+3 workspace 3
+    bindsym $mod+4 workspace 4
+    bindsym $mod+5 workspace 5
     bindsym $mod+6 workspace 6
     bindsym $mod+7 workspace 7
     bindsym $mod+8 workspace 8
     bindsym $mod+9 workspace 9
-    bindsym $mod+0 workspace 10
     # move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace "1: www"
-    bindsym $mod+Shift+2 move container to workspace "2: kod"
-    bindsym $mod+Shift+3 move container to workspace "3: konsola"
-    bindsym $mod+Shift+4 move container to workspace "4: random I"
-    bindsym $mod+Shift+5 move container to workspace "5: random II"
+    bindsym $mod+Shift+1 move container to workspace 1
+    bindsym $mod+Shift+2 move container to workspace 2
+    bindsym $mod+Shift+3 move container to workspace 3
+    bindsym $mod+Shift+4 move container to workspace 4
+    bindsym $mod+Shift+5 move container to workspace 5
     bindsym $mod+Shift+6 move container to workspace 6
     bindsym $mod+Shift+7 move container to workspace 7
     bindsym $mod+Shift+8 move container to workspace 8
     bindsym $mod+Shift+9 move container to workspace 9
-    bindsym $mod+Shift+0 move container to workspace 10
 
 #
 # Layout stuff:
@@ -126,7 +116,7 @@ output * bg $wallpaper fill
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+h splith
+    bindsym $mod+b splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
@@ -177,20 +167,24 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-bar {
-    status_command i3blocks
-    position top
-    colors {
-        statusline #f5f5f5
-        #background #281A23
-        background $background
-        #inactive_workspace #32323200 #32323200 $napisy
-        focused_workspace $kolor $kolor $napisy
-    }
-}
+bindsym $mod+r mode "resize"
+bindsym $mod+0 exec blurlock
+
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+
+# exec_always /home/asgavar/.config/polybar/launch.sh
+
+#bar {
+#    status_command /home/asgavar/.config/polybar/launch.sh
+    #position top
+#    colors {
+#        statusline #00000000
+#        background #00000000
+#    #    focused_workspace $foreground $background $foreground
+#    }
+#}

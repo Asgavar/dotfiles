@@ -177,14 +177,6 @@ bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 
-# exec_always /home/asgavar/.config/polybar/launch.sh
-
-#bar {
-#    status_command /home/asgavar/.config/polybar/launch.sh
-    #position top
-#    colors {
-#        statusline #00000000
-#        background #00000000
-#    #    focused_workspace $foreground $background $foreground
-#    }
-#}
+bar {
+    swaybar_command waybar
+}

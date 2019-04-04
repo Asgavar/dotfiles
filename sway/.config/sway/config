@@ -21,6 +21,8 @@ smart_borders on
 # ladne okna
 new_window pixel 5
 
+input 1739:30143:DLLC6B2:00_06CB:75BF_Touchpad tap enabled
+
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -40,7 +42,7 @@ set $term termite
     bindsym $mod+d exec rofi -show drun
 
     # take a screenshot
-    bindsym $mod+p exec scrot
+    bindsym $mod+p exec grim screenshot.png
 
     # helm-like window chooser
     bindsym $mod+i exec rofi -show window

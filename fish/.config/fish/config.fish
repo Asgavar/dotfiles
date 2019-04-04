@@ -23,7 +23,7 @@ alias dropbox "python2 /home/asgavar/dropbox.py"
 alias off "sudo poweroff"
 alias swm "sudo wifi-menu"
 alias r "ranger"
-alias s "startx /usr/bin/i3"
+alias s sway
 alias pp "polybar papiesz"
 alias vpnopera "sudo openconnect --juniper vpn.opera.com --authgroup=OperaEmployeesOTP --user=ajuraszek"
 

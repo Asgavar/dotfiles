@@ -504,7 +504,7 @@ you should place your code here."
   (add-to-list 'forge-alist '("gitlab.services.ams.osa" "gitlab.services.ams.osa/api/v4" "gitlab.services.ams.osa" forge-gitlab-repository))
   ;; Prolog
   (add-to-list 'auto-mode-alist '("\\.pl$" . prolog-mode))
-  (load-file "/home/asgavar/magit-fastcommit/magit-fastcommit.el")
+  (load-file "/home/asgavar/git-fastcommit/contrib/emacs/magit-fastcommit.el")
   )
 
 (defun dotspacemacs/emacs-custom-settings ()

@@ -8,4 +8,4 @@
 [gitlab "gitlab.services.ams.osa/api/v4"]
 	user = ajuraszek
 [fastcommit]
-	style = uuid
+	style = sequential

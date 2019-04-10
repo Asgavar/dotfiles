@@ -23,6 +23,17 @@ new_window pixel 5
 
 input 1739:30143:DLLC6B2:00_06CB:75BF_Touchpad tap enabled
 
+assign [class="Opera"] workspace 1
+assign [class="Emacs"] workspace 2
+assign [class="Slack"] workspace 4
+assign [class="Thunderbird"] workspace 5
+
+bindsym $mod+F1 exec opera
+bindsym $mod+F2 exec emacs
+
+# full OS setup!
+bindsym $mod+F12 exec opera; exec emacs; exec spotify; exec slack; exec thunderbird
+
 # Home row direction keys, like vim
 set $left h
 set $down j

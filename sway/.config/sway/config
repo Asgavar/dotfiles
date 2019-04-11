@@ -40,7 +40,7 @@ set $down j
 set $up k
 set $right l
 
-set $term termite
+set $term alacritty
 
 ### Key bindings
     # start a terminal

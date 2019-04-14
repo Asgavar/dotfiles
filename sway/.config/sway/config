@@ -182,7 +182,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-bindsym $mod+0 exec blurlock
+bindsym $mod+0 exec /home/asgavar/sway_blur_lock.sh
 
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer set Master 5%-

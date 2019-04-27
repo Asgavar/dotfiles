@@ -10,6 +10,7 @@ export VISUAL="emacsclient -c"
 export TERM=xterm
 export BROWSER=/usr/bin/opera
 export REQUESTS_CA_BUNDLE=/etc/ssl/certs
+export BAT_THEME=1337
 
 export VAULT_ADDR=https://vault.service.osa
 
@@ -37,6 +38,8 @@ alias gdw "git diff -w"
 
 alias emax "emacsclient -c -n"
 alias temacs "emacsclient -t"
+
+alias cat bat
 
 # emacs ansi-term support
 if test -n "$EMACS"

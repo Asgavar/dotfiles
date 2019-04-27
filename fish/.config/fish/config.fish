@@ -11,6 +11,7 @@ export TERM=xterm
 export BROWSER=/usr/bin/opera
 export REQUESTS_CA_BUNDLE=/etc/ssl/certs
 export BAT_THEME=1337
+export PAGER=slit
 
 export VAULT_ADDR=https://vault.service.osa
 

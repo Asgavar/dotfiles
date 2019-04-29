@@ -54,7 +54,7 @@ end
 clear
 
 # opam configuration
-source /home/asgavar/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+#source /home/asgavar/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/asgavar/google-cloud-sdk/path.fish.inc' ]; . '/home/asgavar/google-cloud-sdk/path.fish.inc'; end

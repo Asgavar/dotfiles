@@ -38,7 +38,8 @@ This function should only modify configuration layer settings."
                         auto-completion-enable-help-tooltip t)
      (markdown :variables markdown-command "pandoc")
      (mu4e :variables
-           mu4e-installation-path "/usr/share/emacs/site-lisp/mu4e")
+           mu4e-installation-path "/usr/share/emacs/site-lisp/mu4e"
+           mu4e-use-maildirs-extension t)
      (ruby :variables ruby-enable-enh-ruby-mode t)
      (shell :variables
             shell-default-height 30
@@ -475,7 +476,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq-default dotspacemacs-themes '(nimbus alect-light material flatland afternoon xresources birds-of-paradise-plus gruvbox-dark-hard arjen-grey solarized-light zerodark badwolf))
   (setq explicit-shell-file-name "/bin/bash")
-  (setq shell-file-name "/bin/bash"))
+  (setq shell-file-name "/bin/bash")
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -530,6 +532,23 @@ you should place your code here."
   ;; Prolog
   (add-to-list 'auto-mode-alist '("\\.pl$" . prolog-mode))
   (load-file "/home/asgavar/git-fastcommit/contrib/emacs/magit-fastcommit.el")
+  ;; Email configuration
+  (setq mu4e-update-interval 30)
+  (setq mu4e-enable-notifications t)
+  (setq mu4e-enable-mode-line t)
+  (with-eval-after-load 'mu4e
+    (setq mu4e-contexts
+          `(,(make-mu4e-context
+              :name "Juraszek"
+              :match-func (lambda (msg) (when msg
+                                          (string-prefix-p "/Juraszek" (mu4e-message-field msg :maildir))))
+              :vars '((user-full-name . "Artur Juraszek")
+                      (mu4e-trash-folder . "/Juraszek/Trash")
+                      (mu4e-sent-folder . "/Juraszek/Sent")
+                      (mu4e-drafts-folder . "/Juraszek/Drafts")))))
+    )
+  (with-eval-after-load 'mu4e-alert
+    (mu4e-alert-set-default-style 'notifications))
   )
 
 (defun dotspacemacs/emacs-custom-settings ()
@@ -569,6 +588,7 @@ This function is called at the very end of Spacemacs initialization."
      (javascript-backend . lsp)
      (go-backend . go-mode)
      (go-backend . lsp))))
+ '(send-mail-function (quote mailclient-send-it))
  '(vc-annotate-background "#1f2124")
  '(vc-annotate-color-map
    (quote

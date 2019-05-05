@@ -5,8 +5,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export XKB_DEFAULT_LAYOUT=pl
 export XKB_DEFAULT_OPTIONS=caps:swapescape
 export XDG_RUNTIME_DIR=/home/asgavar/.xdg
-export EDITOR="emacsclient -t"
-export VISUAL="emacsclient -c"
+export EDITOR=emacsclient
+export VISUAL=emacsclient
 export TERM=xterm
 export BROWSER=/usr/bin/opera
 export REQUESTS_CA_BUNDLE=/etc/ssl/certs
@@ -36,11 +36,6 @@ alias ga "git add ."
 alias gc "git commit"
 alias gp "git push"
 alias gdw "git diff -w"
-
-alias emax "emacsclient -c -n"
-alias temacs "emacsclient -t"
-
-alias cat bat
 
 # emacs ansi-term support
 if test -n "$EMACS"

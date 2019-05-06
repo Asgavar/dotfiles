@@ -6,7 +6,10 @@ exec_always python -m pywal -i /home/asgavar/tapeta.jpg -e
 exec mako --default-timeout 5000
 
 font pango:InputMono 10
+
 output * bg $wallpaper fill
+output DP-1 pos 0,0
+output DP-2 pos 1920,0
 
 # ramka gora i dol titlebara | kolor paska | kolor napisu | kolor ramki z prawej | ramka
 # dookola

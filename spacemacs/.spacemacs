@@ -534,9 +534,10 @@ you should place your code here."
   (add-to-list 'auto-mode-alist '("\\.pl$" . prolog-mode))
   (load-file "/home/asgavar/git-fastcommit/contrib/emacs/magit-fastcommit.el")
   ;; Email configuration
-  (setq mu4e-update-interval 30)
-  (setq mu4e-enable-notifications t)
-  (setq mu4e-enable-mode-line t)
+  (setq mu4e-update-interval 30
+        mu4e-enable-notifications t
+        mu4e-enable-mode-line t
+        message-send-mail-function 'smtpmail-send-it)
   (with-eval-after-load 'mu4e
     (setq mu4e-contexts
           `(,(make-mu4e-context
@@ -544,9 +545,16 @@ you should place your code here."
               :match-func (lambda (msg) (when msg
                                           (string-prefix-p "/Juraszek" (mu4e-message-field msg :maildir))))
               :vars '((user-full-name . "Artur Juraszek")
+                      (user-mail-address . "artur@juraszek.xyz")
                       (mu4e-trash-folder . "/Juraszek/Trash")
                       (mu4e-sent-folder . "/Juraszek/Sent")
-                      (mu4e-drafts-folder . "/Juraszek/Drafts")))))
+                      (mu4e-drafts-folder . "/Juraszek/Drafts")
+                      (smtpmail-smtp-user . "artur@juraszek.xyz")
+                      (smtpmail-smtp-server . "mail.privateemail.com")
+                      (smtpmail-smtp-service . 465)
+                      (smtpmail-stream-type . ssl)
+                      (smtpmail-debug-info . t)
+                      ))))
     )
   (with-eval-after-load 'mu4e-alert
     (mu4e-alert-set-default-style 'notifications))
@@ -590,7 +598,6 @@ This function is called at the very end of Spacemacs initialization."
      (javascript-backend . lsp)
      (go-backend . go-mode)
      (go-backend . lsp))))
- '(send-mail-function (quote mailclient-send-it))
  '(vc-annotate-background "#1f2124")
  '(vc-annotate-color-map
    (quote

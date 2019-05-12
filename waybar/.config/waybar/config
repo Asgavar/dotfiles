@@ -38,7 +38,7 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 21,
         "spacing": 10
     },
     "clock": {
@@ -46,10 +46,10 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "{usage}% "
+        "format": "{usage}% cpu"
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% ram"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -61,7 +61,7 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
+        "format-icons": [""]
     },
     "battery": {
         "states": {

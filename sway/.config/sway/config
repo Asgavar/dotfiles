@@ -32,12 +32,9 @@ assign [class="Emacs"] workspace 2
 assign [class="Slack"] workspace 4
 assign [class="Thunderbird"] workspace 5
 
-bindsym $mod+F1 exec opera
+bindsym $mod+F1 exec opera-developer
 bindsym $mod+F2 exec emacs
 bindsym $mod+F5 exec emacsclient -c --eval '(mu4e)'
-
-# full OS setup!
-bindsym $mod+F12 exec opera; exec emacs; exec spotify; exec slack; exec thunderbird
 
 # Home row direction keys, like vim
 set $left h

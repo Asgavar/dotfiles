@@ -382,7 +382,8 @@ It should only modify the values of Spacemacs settings."
                                :enabled-for-modes defaults
                                                   text-mode
                                                   prog-mode
-                                                  tuareg-mode)
+                                                  tuareg-mode
+                                                  prolog-mode)
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil

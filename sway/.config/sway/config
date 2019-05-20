@@ -3,6 +3,7 @@ include "$HOME/.cache/wal/colors-sway"
 set $mod Mod4
 
 exec_always python -m pywal -i /home/asgavar/tapeta.jpg -e
+exec_always dbus-update-activation-environment DISPLAY XAUTHORITY
 exec mako --default-timeout 5000
 
 font pango:InputMono 10

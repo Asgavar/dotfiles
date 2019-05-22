@@ -559,7 +559,7 @@ you should place your code here."
                       ))))
     )
   (with-eval-after-load 'mu4e-alert
-    (mu4e-alert-set-default-style 'notifications))
+    (mu4e-alert-set-default-style 'libnotify))
   )
 
 (defun dotspacemacs/emacs-custom-settings ()

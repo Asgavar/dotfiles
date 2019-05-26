@@ -541,6 +541,11 @@ you should place your code here."
         mu4e-enable-mode-line t
         message-send-mail-function 'smtpmail-send-it)
   (with-eval-after-load 'mu4e
+    (add-to-list 'mu4e-bookmarks
+                 (make-mu4e-bookmark
+                  :name  "Fajne rzeczy"
+                  :query "flag:unread AND NOT flag:trashed AND NOT maildir:/Opera/Sentry"
+                  :key ?b))
     (setq mu4e-contexts
           `(,(make-mu4e-context
               :name "Juraszek"

@@ -536,6 +536,7 @@ you should place your code here."
   (add-hook 'prolog-mode-hook (lambda () (local-set-key (kbd "<f10>") 'ediprolog-dwim)))
   (load-file "/home/asgavar/git-fastcommit/contrib/emacs/magit-fastcommit.el")
   ;; Email configuration
+  (add-hook 'mml-mode-hook 'mml-secure-message-sign-pgpmime)
   (setq mu4e-update-interval 30
         mu4e-enable-notifications t
         mu4e-enable-mode-line t

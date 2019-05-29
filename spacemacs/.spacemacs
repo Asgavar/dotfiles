@@ -38,8 +38,7 @@ This function should only modify configuration layer settings."
                         auto-completion-enable-help-tooltip t)
      (markdown :variables markdown-command "pandoc")
      (mu4e :variables
-           mu4e-installation-path "/usr/share/emacs/site-lisp/mu4e"
-           mu4e-use-maildirs-extension t)
+           mu4e-installation-path "/usr/share/emacs/site-lisp/mu4e")
      (ruby :variables ruby-enable-enh-ruby-mode t)
      (shell :variables
             shell-default-height 30

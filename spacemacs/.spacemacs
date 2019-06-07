@@ -45,7 +45,7 @@ This function should only modify configuration layer settings."
             shell-default-position 'bottom
             shell-default-full-span nil
             shell-default-term-shell "/bin/bash"
-            shell-default-shell 'multiterm)
+            shell-default-shell 'eshell)
      ansible
      (c-c++ :variables c-c++-backend 'lsp-ccls)
      dap

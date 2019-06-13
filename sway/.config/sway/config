@@ -24,7 +24,7 @@ smart_gaps on
 smart_borders on
 
 # ladne okna
-new_window pixel 5
+default_border pixel 5
 
 input 1739:30143:DLLC6B2:00_06CB:75BF_Touchpad tap enabled
 

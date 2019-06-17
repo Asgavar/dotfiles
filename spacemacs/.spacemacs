@@ -95,7 +95,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(ediprolog)
+   dotspacemacs-additional-packages '(ediprolog exec-path-from-shell)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -582,17 +582,14 @@ This function is called at the very end of Spacemacs initialization."
  '(evil-want-Y-yank-to-eol nil)
  '(fci-rule-color "#202325")
  '(notmuch-search-line-faces
-   (quote
-    (("unread" :foreground "#aeee00")
+   '(("unread" :foreground "#aeee00")
      ("flagged" :foreground "#0a9dff")
-     ("deleted" :foreground "#ff2c4b" :bold t))))
- '(org-agenda-files (quote ("~/org/asgavar.org")))
+     ("deleted" :foreground "#ff2c4b" :bold t)))
+ '(org-agenda-files '("~/org/asgavar.org"))
  '(package-selected-packages
-   (quote
-    (ediprolog kaolin-themes dap-mode bui tree-mode noflet protobuf-mode nimbus-theme lsp-ui lsp-java cquery company-lsp ccls lsp-mode alect-themes material-theme helm-rtags google-c-style flycheck-rtags disaster company-rtags rtags company-c-headers clang-format package-lint spotify helm-spotify-plus multi xresources-theme typit mmt treemacs-projectile treemacs-evil treemacs ruby-hash-syntax racket-mode pyvenv org-download merlin meghanada julia-mode hlint-refactor gruvbox-theme forge ghub emacsql-sqlite eyebrowse evil-visual-mark-mode evil-nerd-commenter evil-matchit evil-magit eval-sexp-fu eshell-prompt-extras editorconfig doom-modeline eldoc-eval docker define-word cython-mode auto-compile aggressive-indent ace-link anaconda-mode ivy smartparens flycheck company window-purpose imenu-list avy markdown-mode projectile magit git-commit php-mode f helm helm-core simple-httpd powerline visual-fill-column evil goto-chg org-plus-contrib zerodark-theme yasnippet-snippets yapfify yaml-mode xterm-color xkcd ws-butler writeroom-mode with-editor winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen utop use-package undo-tree tuareg treepy toc-org tagedit symon sudoku string-inflection sql-indent spaceline-all-the-icons solarized-theme smeargle slim-mode shrink-path shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor rubocop rspec-mode robe restclient-helm restart-emacs rbenv rake rainbow-delimiters pytest pyenv-mode py-isort puppet-mode pug-mode prettier-js popwin pippel pipenv pip-requirements phpunit phpcbf php-extras php-auto-yasnippets pfuture persp-mode pdf-tools password-generator paradox pacmacs packed overseer orgit org-projectile org-present org-pomodoro org-mime org-bullets org-brain open-junk-file ocp-indent ob-restclient ob-http nginx-mode nameless mvn multi-term mu4e-maildirs-extension mu4e-alert move-text mmm-mode minitest maven-test-mode markdown-toc magit-svn magit-gitflow macrostep lsp-julia lorem-ipsum livid-mode live-py-mode link-hint julia-repl json-navigator json-mode js2-refactor js-doc jinja2-mode insert-shebang indent-guide importmagic impatient-mode hungry-delete hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation highlight helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-mu helm-mode-manager helm-make helm-hoogle helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets groovy-mode groovy-imports graphql gradle-mode google-translate golden-ratio godoctor go-tag go-rename go-impl go-guru go-gen-test go-fill-struct go-eldoc gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md fuzzy font-lock+ flycheck-pos-tip flycheck-haskell flycheck-bashate flx-ido flatland-theme fish-mode fill-column-indicator fancy-battery faceup expand-region evil-visualstar evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eshell-z esh-help erc-yt erc-view-log erc-social-graph erc-image erc-hl-nicks ensime enh-ruby-mode emmet-mode emacsql elisp-slime-nav dumb-jump drupal-mode dotenv-mode dockerfile-mode docker-tramp diminish diff-hl counsel-projectile company-web company-tern company-statistics company-shell company-restclient company-quickhelp company-php company-go company-ghci company-emacs-eclim company-cabal company-ansible company-anaconda column-enforce-mode cmm-mode closql clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote birds-of-paradise-plus-theme badwolf-theme autothemer auto-yasnippet auto-highlight-symbol arjen-grey-theme ansible-doc ansible afternoon-theme ace-window ace-jump-helm-line ac-ispell 2048-game)))
+   '(exec-path-from-shell ediprolog kaolin-themes dap-mode bui tree-mode noflet protobuf-mode nimbus-theme lsp-ui lsp-java cquery company-lsp ccls lsp-mode alect-themes material-theme helm-rtags google-c-style flycheck-rtags disaster company-rtags rtags company-c-headers clang-format package-lint spotify helm-spotify-plus multi xresources-theme typit mmt treemacs-projectile treemacs-evil treemacs ruby-hash-syntax racket-mode pyvenv org-download merlin meghanada julia-mode hlint-refactor gruvbox-theme forge ghub emacsql-sqlite eyebrowse evil-visual-mark-mode evil-nerd-commenter evil-matchit evil-magit eval-sexp-fu eshell-prompt-extras editorconfig doom-modeline eldoc-eval docker define-word cython-mode auto-compile aggressive-indent ace-link anaconda-mode ivy smartparens flycheck company window-purpose imenu-list avy markdown-mode projectile magit git-commit php-mode f helm helm-core simple-httpd powerline visual-fill-column evil goto-chg org-plus-contrib zerodark-theme yasnippet-snippets yapfify yaml-mode xterm-color xkcd ws-butler writeroom-mode with-editor winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen utop use-package undo-tree tuareg treepy toc-org tagedit symon sudoku string-inflection sql-indent spaceline-all-the-icons solarized-theme smeargle slim-mode shrink-path shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor rubocop rspec-mode robe restclient-helm restart-emacs rbenv rake rainbow-delimiters pytest pyenv-mode py-isort puppet-mode pug-mode prettier-js popwin pippel pipenv pip-requirements phpunit phpcbf php-extras php-auto-yasnippets pfuture persp-mode pdf-tools password-generator paradox pacmacs packed overseer orgit org-projectile org-present org-pomodoro org-mime org-bullets org-brain open-junk-file ocp-indent ob-restclient ob-http nginx-mode nameless mvn multi-term mu4e-maildirs-extension mu4e-alert move-text mmm-mode minitest maven-test-mode markdown-toc magit-svn magit-gitflow macrostep lsp-julia lorem-ipsum livid-mode live-py-mode link-hint julia-repl json-navigator json-mode js2-refactor js-doc jinja2-mode insert-shebang indent-guide importmagic impatient-mode hungry-delete hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation highlight helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-mu helm-mode-manager helm-make helm-hoogle helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets groovy-mode groovy-imports graphql gradle-mode google-translate golden-ratio godoctor go-tag go-rename go-impl go-guru go-gen-test go-fill-struct go-eldoc gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md fuzzy font-lock+ flycheck-pos-tip flycheck-haskell flycheck-bashate flx-ido flatland-theme fish-mode fill-column-indicator fancy-battery faceup expand-region evil-visualstar evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eshell-z esh-help erc-yt erc-view-log erc-social-graph erc-image erc-hl-nicks ensime enh-ruby-mode emmet-mode emacsql elisp-slime-nav dumb-jump drupal-mode dotenv-mode dockerfile-mode docker-tramp diminish diff-hl counsel-projectile company-web company-tern company-statistics company-shell company-restclient company-quickhelp company-php company-go company-ghci company-emacs-eclim company-cabal company-ansible company-anaconda column-enforce-mode cmm-mode closql clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote birds-of-paradise-plus-theme badwolf-theme autothemer auto-yasnippet auto-highlight-symbol arjen-grey-theme ansible-doc ansible afternoon-theme ace-window ace-jump-helm-line ac-ispell 2048-game))
  '(safe-local-variable-values
-   (quote
-    ((encoding . utf-8)
+   '((encoding . utf-8)
      (org-todo-keyword-faces
       ("TODO" . "red")
       ("INPROGRESS" . "yellow")
@@ -604,11 +601,10 @@ This function is called at the very end of Spacemacs initialization."
      (javascript-backend . tern)
      (javascript-backend . lsp)
      (go-backend . go-mode)
-     (go-backend . lsp))))
+     (go-backend . lsp)))
  '(vc-annotate-background "#1f2124")
  '(vc-annotate-color-map
-   (quote
-    ((20 . "#ff0000")
+   '((20 . "#ff0000")
      (40 . "#ff4a52")
      (60 . "#f6aa11")
      (80 . "#f1e94b")
@@ -625,7 +621,7 @@ This function is called at the very end of Spacemacs initialization."
      (300 . "#8996a8")
      (320 . "#afc4db")
      (340 . "#cfe2f2")
-     (360 . "#dc8cc3"))))
+     (360 . "#dc8cc3")))
  '(vc-annotate-very-old-color "#dc8cc3")
  '(vc-follow-symlinks t))
 (custom-set-faces

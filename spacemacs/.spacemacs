@@ -60,7 +60,7 @@ This function should only modify configuration layer settings."
      html
      java
      javascript
-     lsp
+     (lsp :variables lsp-ui-sideline-enable nil)
      nginx
      ocaml
      octave

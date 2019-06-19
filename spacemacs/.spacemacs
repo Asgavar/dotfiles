@@ -529,7 +529,7 @@ you should place your code here."
   ;; Org
   (add-hook 'org-mode-hook 'org-toggle-pretty-entities)
   ;; Opera Web Services GitLab instance
-  ;; (add-to-list 'forge-alist '("gitlab.services.ams.osa" "gitlab.services.ams.osa/api/v4" "gitlab.services.ams.osa" forge-gitlab-repository))
+  (add-to-list 'forge-alist '("gitlab.services.ams.osa" "gitlab.services.ams.osa/api/v4" "gitlab.services.ams.osa" forge-gitlab-repository))
   ;; Prolog
   (add-to-list 'auto-mode-alist '("\\.pl$" . prolog-mode))
   (add-hook 'prolog-mode-hook (lambda () (local-set-key (kbd "<f10>") 'ediprolog-dwim)))

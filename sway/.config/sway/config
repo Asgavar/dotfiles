@@ -57,6 +57,7 @@ set $term alacritty
 
     # take a screenshot
     bindsym $mod+p exec grim screenshot.png
+    bindsym $mod+Shift+p exec 'slurp | xargs -I{} grim -g {} screenshot.png'
 
     # helm-like window chooser
     bindsym $mod+i exec rofi -show window

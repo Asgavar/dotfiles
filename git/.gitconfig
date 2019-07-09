@@ -11,3 +11,6 @@
 	style = sequential
 [rebase]
 	autosquash = true
+
+[includeIf "gitdir:~/opera/"]
+    path = ~/opera/.gitconfig_include

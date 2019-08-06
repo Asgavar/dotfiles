@@ -475,7 +475,7 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  (setq-default dotspacemacs-themes '(material kaolin-galaxy nimbus alect-light material flatland afternoon xresources birds-of-paradise-plus gruvbox-dark-hard arjen-grey solarized-light zerodark badwolf))
+  (setq-default dotspacemacs-themes '(material-light kaolin-galaxy nimbus alect-light material flatland afternoon xresources birds-of-paradise-plus gruvbox-dark-hard arjen-grey solarized-light zerodark badwolf))
   (setq explicit-shell-file-name "/bin/bash")
   (setq shell-file-name "/bin/bash")
   )

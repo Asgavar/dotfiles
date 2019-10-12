@@ -47,7 +47,7 @@ This function should only modify configuration layer settings."
             shell-default-term-shell "/bin/bash"
             shell-default-shell 'eshell)
      ansible
-     (c-c++ :variables c-c++-backend 'lsp-ccls)
+     ;(c-c++ :variables c-c++-backend 'lsp-ccls)
      dap
      docker
      emacs-lisp

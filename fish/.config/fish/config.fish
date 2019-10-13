@@ -1,3 +1,5 @@
+cat /home/asgavar/.cache/wal/sequences
+
 export LANG=en_US.utf8
 export _JAVA_AWT_WM_NONREPARENTING=1
 export XKB_DEFAULT_LAYOUT=pl

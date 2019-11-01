@@ -539,6 +539,8 @@ you should place your code here."
                                                  (lambda () (untabify (point-min)
                                                                       (point-max)))
                                                  nil t)))
+  ;; Octave
+  (add-hook 'octave-mode-hook (lambda () (local-set-key (kbd "C-c C-c") 'octave-send-buffer)))
   ;; Racket
   (add-hook 'racket-mode-hook (lambda () (turn-off-smartparens-mode)))
   (add-hook 'racket-repl-mode-hook (lambda () (turn-off-smartparens-mode)))

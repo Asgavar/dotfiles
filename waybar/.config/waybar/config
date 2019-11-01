@@ -110,7 +110,7 @@
         "on-scroll-up": "amixer set Master 1+; pkill -x -RTMIN+11 waybar",
         "on-scroll-down": "amixer set Master 1-; pkill -x -RTMIN+11 waybar",
         "signal": 11,
-        "interval": 10,
+        "interval": 1,
         "tooltip": false
     }
 }

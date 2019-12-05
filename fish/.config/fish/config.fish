@@ -1,4 +1,4 @@
-cat /home/asgavar/.cache/wal/sequences
+# cat /home/asgavar/.cache/wal/sequences
 
 export LANG=en_US.utf8
 export _JAVA_AWT_WM_NONREPARENTING=1

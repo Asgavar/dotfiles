@@ -12,6 +12,11 @@ warning = 0
 alert = 0
 
 [[block]]
+block = "battery"
+interval = 10
+format = "{percentage}% {time}"
+
+[[block]]
 block = "memory"
 display_type = "memory"
 format_mem = "{Mup}%"

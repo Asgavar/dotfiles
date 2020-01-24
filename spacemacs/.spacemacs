@@ -579,6 +579,7 @@ you should place your code here."
                   :name  "Sentry only"
                   :query "flag:unread AND maildir:/Opera/Sentry"
                   :key ?s))
+    (setq mu4e-context-policy 'pick-first)
     (setq mu4e-contexts
           `(,(make-mu4e-context
               :name "Juraszek"

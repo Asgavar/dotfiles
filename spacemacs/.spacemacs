@@ -63,7 +63,6 @@ This function should only modify configuration layer settings."
      javascript
      latex
      (lsp :variables lsp-ui-sideline-enable nil)
-     major-modes
      nginx
      ocaml
      octave

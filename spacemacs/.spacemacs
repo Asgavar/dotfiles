@@ -553,6 +553,8 @@ you should place your code here."
   (add-hook 'json-mode-hook (lambda () (setq js-indent-level 2)))
   ;; Opera mgr templates
   (add-to-list 'auto-mode-alist '("\\.tpl$" . jinja2-mode))
+  ;; Arch Linux PKGBUILD recipes
+  (add-to-list 'auto-mode-alist '("PKGBUILD$" . sh-mode))
   ;; Org
   (add-hook 'org-mode-hook 'org-toggle-pretty-entities)
   ;; Opera Web Services GitLab instance

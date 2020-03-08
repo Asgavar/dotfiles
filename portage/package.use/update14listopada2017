@@ -1,9 +1,0 @@
-# required by net-libs/webkit-gtk-2.18.2::gentoo[gstreamer]
-# required by www-client/surf-2.0::gentoo
-# required by @selected
-# required by @world (argument)
->=media-libs/gst-plugins-bad-1.10.5 egl
-# required by app-shells/fish-2.6.0::gentoo
-# required by @selected
-# required by @world (argument)
->=dev-libs/libpcre2-10.30 pcre32

@@ -1,4 +1,0 @@
-# podczas instalowania steama wysrywal blad circular dependencies
-=sys-libs/ncurses-6.0-r1 -gpm
-=sys-libs/ncurses-5.9-r101 tinfo
-

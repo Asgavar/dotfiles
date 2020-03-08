@@ -1,9 +1,0 @@
-# required by app-text/zathura-0.3.7::gentoo
-# required by app-text/zathura-pdf-mupdf-0.3.1::gentoo
-# required by app-text/zathura-pdf-mupdf (argument)
-=dev-libs/girara-0.2.7 ~amd64
-# required by app-text/zathura-pdf-mupdf-0.3.1::gentoo
-# required by app-text/zathura-pdf-mupdf (argument)
-=app-text/zathura-0.3.7 ~amd64
-# required by app-text/zathura-pdf-mupdf (argument)
-=app-text/zathura-pdf-mupdf-0.3.1 ~amd64

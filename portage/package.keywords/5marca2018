@@ -1,4 +1,0 @@
-# required by app-editors/atom-1.23.3::gentoo
-# required by @selected
-# required by @world (argument)
->=dev-libs/libgit2-0.24.1 ~amd64

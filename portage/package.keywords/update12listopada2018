@@ -1,8 +1,0 @@
-# required by dev-db/redis-5.0.1::gentoo[jemalloc]
-# required by @selected
-# required by @world (argument)
->=dev-libs/jemalloc-5.1.0 ~amd64
-# required by dev-php/composer-1.7.3::gentoo
-# required by @selected
-# required by @world (argument)
->=dev-php/xdebug-handler-1.3.0 ~amd64

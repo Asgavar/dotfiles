@@ -1,7 +1,0 @@
-# required by app-text/calibre-3.15.0::gentoo
-# required by calibre (argument)
->=dev-python/PyQt5-5.9.2 webkit
-# required by dev-python/PyQt5-5.9.2::gentoo[webkit]
-# required by app-text/calibre-3.15.0::gentoo
-# required by calibre (argument)
->=dev-qt/qtwebkit-5.9.1 printsupport

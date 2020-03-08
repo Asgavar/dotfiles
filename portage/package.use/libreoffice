@@ -1,6 +1,0 @@
-# required by app-office/libreoffice-5.2.3.3-r1::gentoo
-# required by app-office/libreoffice (argument)
->=media-libs/harfbuzz-1.3.1 icu
-
-# ciezko stwierdzic co to, ale na maturze moze sie przydac
-#>=app-office/libreoffice-5.2.3.3-r1 mysql
